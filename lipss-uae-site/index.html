@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="LIPSS UAE — A new era of lip care">
+<meta property="og:description" content="Born in Ukraine in 2024, LIPSS is a modern lip care brand where beauty meets care. Now in the UAE.">
+<meta property="og:image" content="assets/img/cherry-model-1400.webp">
+<meta name="theme-color" content="#5E2A2B">
+<title>LIPSS UAE</title>
+<meta name="description" content="LIPSS — a new era of lip care. Born in Ukraine in 2024, now in the UAE. Meet the Lipper.">
+<link rel="preload" href="assets/fonts/Rubik.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Layout: a short editorial campaign scroll, eight beats. Cream pages alternate with cocoa and pink spreads.
+   Rubik is the primary face for everything; Array (dotted) appears only as a brand accent on a few short words.
+   Single-theme on purpose: this is the LIPSS brand world, so colours are fixed regardless of host theme. */
+@font-face{font-family:"Array";src:url(assets/fonts/Array-BoldWide.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Rubik";src:url(assets/fonts/Rubik.woff2) format("woff2");font-weight:300 900;font-display:swap}
+
+:root{
+  color-scheme:light;
+  /* LIPSS brand guide */
+  --cream:#FCF8F5;
+  --sand:#D8C6B6;
+  --nude:#E1B6A5;
+  --cocoa:#5E2A2B;
+  --pink:#EBA2B1;
+  /* derived */
+  --night:#2B1213;
+  --cocoa-60:rgba(94,42,43,.62);
+  --cocoa-15:rgba(94,42,43,.15);
+  --cream-70:rgba(252,248,245,.72);
+  --cream-20:rgba(252,248,245,.2);
+
+  --sans:"Rubik",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --accent:"Array","Rubik",ui-sans-serif,system-ui,sans-serif;
+
+  --step-0:clamp(1rem,.96rem + .2vw,1.125rem);
+  --step-1:clamp(1.15rem,1.05rem + .5vw,1.45rem);
+  --step-2:clamp(1.45rem,1.2rem + 1.2vw,2.2rem);
+  --step-3:clamp(2.2rem,1.4rem + 3.4vw,4.4rem);
+  --step-4:clamp(2.6rem,1.3rem + 6vw,7.5rem);
+
+  --gutter:max(18px,4vw);
+  --space:clamp(64px,8vw,120px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --nav-h:64px;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 8px)}
+body{background:var(--cream);color:var(--cocoa);font-family:var(--sans);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--cream)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+.wrap{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+.logo{display:block;fill:currentColor}
+
+/* type: Rubik leads */
+.h{font-family:var(--sans);font-weight:800;line-height:.92;letter-spacing:-.035em;text-transform:uppercase;text-wrap:balance;margin:0}
+.dots{font-family:var(--accent);font-weight:800;letter-spacing:0;text-transform:uppercase}
+.eyebrow{font-weight:500;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;margin:0}
+.lede{font-size:var(--step-2);font-weight:300;line-height:1.22;letter-spacing:-.015em;text-wrap:balance;margin:0}
+.body p{margin:0 0 1em;max-width:36em}
+.body p:last-child{margin-bottom:0}
+.pink{color:var(--pink)}
+
+/* buttons */
+.btn{--bg:var(--cocoa);--fg:var(--cream);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:.9em 1.6em;border-radius:999px;border:1.5px solid var(--bg);background:var(--bg);color:var(--fg);font:500 .82rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;overflow:hidden;isolation:isolate;transition:color .35s var(--ease),border-color .35s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--pink);transform:translateY(101%);transition:transform .45s var(--ease);z-index:-1}
+.btn:hover::before,.btn:focus-visible::before{transform:none}
+.btn:hover,.btn:focus-visible{color:var(--cocoa);border-color:var(--pink)}
+.btn--ghost{--bg:transparent;--fg:var(--cocoa);border-color:currentColor}
+.btn--light{--bg:var(--cream);--fg:var(--cocoa)}
+.btn .arr{transition:transform .35s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;max-width:100%}
+
+.frame{position:relative;overflow:hidden;background:var(--sand);max-width:100%}
+.frame img{width:100%;height:100%;object-fit:cover}
+.ph{display:grid;place-items:center;text-align:center;padding:1rem;background:radial-gradient(circle,var(--cocoa-15) 1.2px,transparent 1.6px) 0 0/12px 12px,var(--sand);font:500 .68rem/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.ph span{background:var(--cream);padding:.5em .8em}
+.cap{font:500 .7rem/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+
+.sheen::after{content:"";position:absolute;inset:-20%;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.38) 48%,rgba(255,255,255,.08) 52%,transparent 60%);transform:translateX(-80%);animation:sheen 7s 1.8s var(--ease) infinite;pointer-events:none;mix-blend-mode:soft-light}
+@keyframes sheen{0%{transform:translateX(-80%)}35%,100%{transform:translateX(80%)}}
+
+/* reveal (only hidden when JS marks it below the fold) */
+.rv{transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.pre{opacity:0;transform:translateY(36px)}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background .4s,box-shadow .4s}
+.nav.solid{background:rgba(252,248,245,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--cocoa-15)}
+.nav__logo{color:var(--cocoa);width:84px;height:40px;display:block}
+.nav__logo svg{width:100%;height:100%}
+.nav__links{display:none;gap:clamp(1rem,2.4vw,2.4rem);list-style:none;margin:0;padding:0}
+.nav__links a{font:500 .76rem/1 var(--sans);letter-spacing:.16em;text-decoration:none;position:relative;padding:.4em 0}
+.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:5px;background:radial-gradient(circle,currentColor 1.3px,transparent 1.7px) 0 0/7px 5px repeat-x;transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav__links a:hover::after,.nav__links a.on::after{transform:none}
+.nav__cta{display:none}
+.nav__burger{width:48px;height:48px;border:0;background:none;color:var(--cocoa);display:grid;place-items:center;cursor:pointer;margin-right:-10px}
+.nav__burger i{display:block;width:24px;height:1.5px;background:currentColor;box-shadow:0 -7px 0 currentColor,0 7px 0 currentColor;transition:.3s}
+.menu-open .nav__burger i{box-shadow:none;transform:rotate(45deg)}
+.menu-open .nav__burger i::after{content:"";display:block;width:24px;height:1.5px;background:currentColor;transform:rotate(-90deg)}
+.menu{position:fixed;inset:0;z-index:45;background:var(--cocoa);color:var(--cream);padding-top:calc(var(--nav-h) + 4vh + env(safe-area-inset-top,0px));padding-bottom:max(28px,env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;justify-content:space-between;clip-path:circle(0 at calc(100% - 40px) 32px);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu-open .menu{clip-path:circle(150% at calc(100% - 40px) 32px);visibility:visible}
+.menu-open .nav{background:transparent;box-shadow:none;backdrop-filter:none}
+.menu-open .nav__logo,.menu-open .nav__burger{color:var(--cream)}
+.menu ul{list-style:none;margin:0;padding:0;display:grid;gap:.15em}
+.menu ul a{font-weight:800;letter-spacing:-.03em;font-size:clamp(2.2rem,11vw,4rem);line-height:1.05;text-decoration:none;text-transform:uppercase}
+.menu ul a:hover{color:var(--pink)}
+.menu__foot{display:flex;flex-direction:column;gap:18px}
+@media (min-width:1024px){
+  .nav__links,.nav__cta{display:flex}
+  .nav__burger,.menu{display:none}
+  .nav__cta .btn{min-height:42px;padding:.7em 1.3em;font-size:.72rem}
+}
+
+/* ---------- 1 HERO ---------- */
+.hero{padding-top:clamp(12px,3vw,36px);padding-bottom:clamp(36px,5vw,72px);display:grid;gap:22px}
+.hero__eyebrow{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.hero__h{font-size:clamp(2.2rem,11.5vw,10rem);position:relative;z-index:3}
+.hero__h .ln{display:block;overflow:hidden;padding-block:.03em}
+.hero__h .ln>span{display:block;animation:rise 1.2s var(--ease) both}
+.hero__h .ln:nth-child(2)>span{animation-delay:.12s}
+.hero__h .ln:nth-child(3)>span{animation-delay:.24s}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.hero__media{position:relative}
+.hero__main{aspect-ratio:4/5;animation:unveil 1.6s .2s var(--ease) both}
+@keyframes unveil{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+.hero__float{position:absolute;width:38%;right:-4%;bottom:-8%;aspect-ratio:1;z-index:4;box-shadow:0 30px 60px -20px rgba(94,42,43,.45);animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(-2deg)}}
+.hero__tag{position:absolute;left:12px;top:12px;z-index:4;background:var(--cream);padding:.5em .8em;font:500 .66rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.hero__copy{display:grid;gap:22px;max-width:30rem}
+.hero__copy p{margin:0;font-size:var(--step-1);font-weight:300;line-height:1.4}
+@media (min-width:1024px){
+  .hero{grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:0;align-items:start}
+  .hero__eyebrow{grid-column:1/-1;margin-bottom:2vw}
+  .hero__h{grid-column:1/10;grid-row:2;font-size:clamp(4rem,8.4vw,10.5rem);margin-top:1vw}
+  .hero__media{grid-column:8/13;grid-row:2/4;margin-bottom:0}
+  .hero__copy{grid-column:1/6;grid-row:3;align-self:end;padding-bottom:2vw}
+  .hero__float{width:42%;left:-30%;right:auto;bottom:6%}
+}
+
+.marquee{overflow:hidden;white-space:nowrap;border-block:1px solid var(--cocoa-15);padding-block:14px;user-select:none}
+.marquee__t{display:inline-flex;gap:2.2rem;animation:mq 38s linear infinite;padding-right:2.2rem}
+.marquee__t span{font:500 .8rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.marquee__t b{color:var(--pink);font-size:.8rem}
+@keyframes mq{to{transform:translateX(-100%)}}
+
+/* ---------- 2 ABOUT ---------- */
+.about{padding-block:var(--space);display:grid;gap:clamp(32px,4vw,56px)}
+.about__h{font-size:var(--step-4)}
+.about__statement{font-size:var(--step-2);font-weight:300;line-height:1.15;letter-spacing:-.02em;margin:0 0 .8em}
+.about__statement em{font-style:normal;font-weight:500;color:var(--pink)}
+.pill{display:inline-block;width:2.1em;height:.95em;vertical-align:-.05em;border-radius:999px;overflow:hidden;margin-inline:.08em}
+.pill img{width:100%;height:100%;object-fit:cover}
+.about__grid{display:grid;gap:28px}
+.about__img{aspect-ratio:16/9}
+.about__sign{font-weight:700;font-size:var(--step-1);text-transform:uppercase;letter-spacing:.02em;margin-top:1.2em}
+@media (min-width:860px){.about__grid{grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,80px);align-items:center}}
+
+/* ---------- 3 LIPPER + INSIDE ---------- */
+.lipper{background:var(--cocoa);color:var(--cream);padding-block:var(--space)}
+.lipper .eyebrow{color:var(--cream)}
+.lipper__big{font-size:clamp(3rem,12vw,11rem);color:var(--cream);margin:.2em 0 .45em}
+.lipper__stage{display:grid;gap:32px}
+.lipper__hero{aspect-ratio:4/5}
+.lipper__copy{display:grid;gap:24px;align-content:start}
+.lipper__copy .body{color:var(--cream)}
+.inside{margin-top:clamp(48px,6vw,90px);display:grid;gap:28px}
+.inside__row{display:grid;gap:28px}
+.ing{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;border-top:1px solid var(--cream-20);padding-top:18px}
+.ing .frame{aspect-ratio:1}
+.ing h3{font-weight:800;font-size:var(--step-1);letter-spacing:-.01em;text-transform:uppercase;margin:0 0 2px;line-height:1.1}
+.ing small{display:block;font:500 .66rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--cream);opacity:.8;margin-bottom:8px}
+.ing p{margin:0;color:var(--cream);font-size:.95rem;line-height:1.5}
+@media (min-width:900px){
+  .lipper__stage{grid-template-columns:6fr 5fr;gap:clamp(40px,6vw,100px);align-items:center}
+  .inside__row{grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px)}
+  .ing{grid-template-columns:1fr}
+  .ing .frame{aspect-ratio:4/5}
+}
+
+/* ---------- 4 DETAIL ---------- */
+.detail{background:var(--sand);padding-block:var(--space)}
+.detail__head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px)}
+.detail__h{font-size:var(--step-3);max-width:13ch}
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1 * max(var(--gutter),env(safe-area-inset-left,0px)));padding-inline:max(var(--gutter),env(safe-area-inset-left,0px))}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 72vw;max-width:380px;margin:0;scroll-snap-align:start;display:grid;gap:10px;align-content:start}
+.strip .frame{aspect-ratio:4/5}
+.strip figcaption{font-size:var(--step-0);font-weight:300;line-height:1.35}
+.strip figcaption .cap{display:block;margin-bottom:4px}
+.detail__foot{margin:clamp(28px,4vw,48px) 0 0;max-width:40rem;font-size:var(--step-1);font-weight:300;line-height:1.4}
+@media (min-width:1000px){
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible;margin-inline:0;padding-inline:0;gap:20px}
+  .strip figure{max-width:none}
+  .strip figure:nth-child(even){margin-top:56px}
+}
+
+/* ---------- 5 UAE ---------- */
+.journey{position:relative;overflow:hidden;background:var(--jbg,var(--cream));padding-block:var(--space);isolation:isolate}
+.journey canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.journey__h{font-size:var(--step-4);max-width:11ch}
+.route{margin-block:clamp(32px,5vw,64px);display:grid;gap:12px}
+.route__ends{display:flex;justify-content:space-between;gap:12px;font:500 .72rem/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.route__ends div:last-child{text-align:right}
+.route__ends strong{display:block;font-weight:800;font-size:clamp(1.4rem,4vw,2.6rem);letter-spacing:-.02em;line-height:1}
+.route__line{position:relative;height:14px}
+.route__line::before,.route__line i{content:"";position:absolute;inset:0;background:radial-gradient(circle,currentColor 2.6px,transparent 3.1px) 0 50%/14px 14px repeat-x}
+.route__line::before{opacity:.2}
+.route__line i{clip-path:inset(0 calc((1 - var(--p,0)) * 100%) 0 0)}
+.route__line b{position:absolute;top:50%;left:calc(var(--p,0) * 100%);width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 6px rgba(235,162,177,.35)}
+.route__km{font:500 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-align:center}
+.journey__grid{display:grid;gap:40px}
+.journey__copy{display:grid;gap:22px;align-content:start;justify-items:start}
+.journey__copy .lede{font-size:var(--step-1);line-height:1.4;max-width:26em}
+.hello{font-size:clamp(2rem,12.5vw,6rem);line-height:1;margin:0;font-weight:900;white-space:nowrap}
+@media (min-width:900px){.hello{font-size:clamp(3rem,6.8vw,7.5rem)}}
+.hello__tag{display:inline-block;background:var(--cocoa);color:var(--cream);padding:.02em .18em .06em;border-radius:.14em;transform:rotate(-3deg);margin-left:.05em}
+.who{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.who li{border:1px solid var(--cocoa);border-radius:999px;padding:.55em 1em;font:500 .74rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.live{display:inline-flex;align-items:center;gap:.7em;font:500 .72rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+.live::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pink);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(235,162,177,.7)}50%{box-shadow:0 0 0 8px rgba(235,162,177,0)}}
+.arch__wrap{position:relative;max-width:520px;width:100%;justify-self:center}
+.arch{aspect-ratio:1/1;border-radius:999px 999px 0 0}
+.sun{position:absolute;width:58%;aspect-ratio:1;border-radius:50%;right:-14%;top:calc(-6% + (1 - var(--p,0)) * 30%);background:radial-gradient(circle at 40% 40%,#F6D2B8,var(--nude) 55%,var(--pink));opacity:.9;z-index:-1}
+@media (min-width:900px){
+  .journey__grid{grid-template-columns:6fr 5fr;align-items:center;gap:6vw}
+  .arch__wrap{justify-self:end;margin-right:3vw}
+}
+
+/* ---------- 6 PARTNERS (+ why) ---------- */
+.partners{padding-block:var(--space);display:grid;gap:48px}
+.partners__h{font-size:var(--step-3)}
+.partners__left{display:grid;gap:26px;align-content:start}
+.types{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.types li{background:var(--cream);border:1px solid var(--cocoa-15);border-radius:999px;padding:.55em 1em;font-size:.92rem;transition:background .3s,border-color .3s}
+.types li:hover{background:var(--pink);border-color:var(--pink)}
+.why{list-style:none;margin:0;padding:0;border-top:1px solid var(--cocoa-15)}
+.why li{padding:18px 0;border-bottom:1px solid var(--cocoa-15);display:grid;gap:6px}
+.why h3{margin:0;font-weight:800;font-size:var(--step-1);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
+.why p{margin:0;font-size:.95rem;color:var(--cocoa-60);max-width:34em}
+.form{background:var(--cocoa);color:var(--cream);padding:clamp(24px,4vw,52px);display:grid;gap:22px;align-content:start;scroll-margin-top:calc(var(--nav-h) + 16px)}
+.form h3{font-weight:800;font-size:var(--step-2);text-transform:uppercase;letter-spacing:-.02em;margin:0;line-height:1}
+.form .intro{margin:0;color:var(--cream-70);font-size:.95rem}
+.fields{display:grid;gap:18px 20px}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font:500 .68rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--pink)}
+.field input,.field select,.field textarea{width:100%;font:400 1rem/1.4 var(--sans);color:var(--cream);background:transparent;border:0;border-bottom:1px solid rgba(252,248,245,.35);border-radius:0;padding:10px 0;transition:border-color .3s}
+.field select{appearance:none;background:linear-gradient(45deg,transparent 50%,var(--cream) 50%) calc(100% - 10px) 55%/6px 6px no-repeat,linear-gradient(-45deg,transparent 50%,var(--cream) 50%) calc(100% - 4px) 55%/6px 6px no-repeat}
+.field select option{color:var(--cocoa);background:var(--cream)}
+.field textarea{resize:vertical;min-height:100px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pink)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(252,248,245,.4)}
+.field .err{font-size:.78rem;color:var(--pink)}
+.field.bad input,.field.bad select{border-color:var(--pink)}
+.form .btn{justify-self:start}
+.form__ok{display:grid;gap:14px}
+.form__ok p{margin:0;color:var(--cream-70)}
+@media (min-width:640px){.fields{grid-template-columns:1fr 1fr}.field--full{grid-column:1/-1}}
+@media (min-width:1000px){.partners{grid-template-columns:6fr 5fr;gap:6vw;align-items:start}.form{position:sticky;top:calc(var(--nav-h) + 20px)}}
+
+/* ---------- 7 COMMUNITY + INSTAGRAM ---------- */
+.community{background:var(--pink);padding-block:var(--space);display:grid;gap:36px}
+.community__top{display:grid;gap:22px}
+.community__h{font-size:var(--step-3)}
+.community__sub{font-size:var(--step-2);font-weight:300;line-height:1.1;margin:0}
+.handle{font-weight:700;font-size:var(--step-1);margin:0}
+.feed{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.feed>*{position:relative;display:block;aspect-ratio:1;overflow:hidden;background:var(--sand)}
+.feed>:first-child{grid-row:span 2;aspect-ratio:auto}
+.feed>:first-child img{position:absolute;inset:0}
+.feed img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.feed a::after{content:"@lipss.uae";position:absolute;inset:auto 0 0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(43,18,19,.6));color:var(--cream);font:500 .66rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:opacity .4s}
+.feed a:hover img{transform:scale(1.06)}
+.feed a:hover::after,.feed a:focus-visible::after{opacity:1}
+.community__foot{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between}
+@media (min-width:900px){
+  .community__top{grid-template-columns:1fr 1fr;align-items:end;column-gap:6vw}
+  .feed{grid-template-columns:repeat(4,1fr);gap:12px}
+  .feed>:first-child{grid-column:span 2}
+}
+
+/* ---------- 8 TEASER + FINAL ---------- */
+.teaser{position:relative;background:var(--night);color:var(--cream);overflow:hidden;padding-block:clamp(90px,12vw,170px);isolation:isolate;cursor:crosshair}
+.teaser__bg,.teaser__lit{position:absolute;inset:0;z-index:-2}
+.teaser__bg img,.teaser__lit img{width:100%;height:100%;object-fit:cover}
+.teaser__bg{filter:blur(26px) brightness(.38) saturate(1.2);transform:scale(1.15)}
+.teaser__lit{z-index:-1;--mx:70%;--my:50%;-webkit-mask-image:radial-gradient(circle at var(--mx) var(--my),#000 0,#000 90px,transparent 230px);mask-image:radial-gradient(circle at var(--mx) var(--my),#000 0,#000 90px,transparent 230px);filter:brightness(.85)}
+.teaser__in{display:grid;gap:24px;max-width:60rem}
+.teaser .h{font-size:clamp(2.6rem,9vw,8rem)}
+.teaser .h .blink{color:var(--pink);animation:blink 2.4s steps(1) infinite}
+@keyframes blink{50%{opacity:.25}}
+.teaser .body{color:var(--cream-70);font-size:var(--step-1);font-weight:300;line-height:1.45}
+.teaser .body strong{color:var(--pink);font-weight:500}
+.teaser__sign{font-size:var(--step-2);font-weight:300;margin:0}
+.btn--ghost-light{--bg:transparent;--fg:var(--cream);border-color:var(--cream)}
+
+/* ---------- FOOTER ---------- */
+.foot{background:var(--cocoa);color:var(--cream);padding-block:clamp(48px,6vw,80px) max(28px,env(safe-area-inset-bottom,0px));display:grid;gap:40px}
+.foot__logo{color:var(--cream);width:min(320px,70%)}
+.foot__logo svg{width:100%;height:auto;aspect-ratio:76/36}
+.foot__cols{display:grid;gap:28px}
+.foot h4{font:500 .68rem/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin:0 0 10px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot a{text-decoration:none;opacity:.85}
+.foot a:hover{opacity:1;color:var(--pink)}
+.foot button.linkish{background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;opacity:.85;text-align:left}
+.foot button.linkish:hover{color:var(--pink);opacity:1}
+.foot__base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.78rem;color:var(--cream-70);border-top:1px solid var(--cream-20);padding-top:20px}
+.copy-email{display:inline-flex;gap:10px;align-items:center;flex-wrap:wrap}
+.copy-email button{background:none;border:1px solid rgba(252,248,245,.4);color:var(--cream);border-radius:999px;font:500 .62rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:.55em .9em;cursor:pointer}
+@media (min-width:800px){.foot{grid-template-columns:1fr 2fr;align-items:start}.foot__cols{grid-template-columns:repeat(3,1fr)}.foot__base{grid-column:1/-1}}
+
+dialog{border:0;padding:0;max-width:min(560px,calc(100vw - 32px));background:var(--cream);color:var(--cocoa)}
+dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
+.dlg{padding:32px;display:grid;gap:14px}
+.dlg h3{font-weight:800;font-size:1.6rem;text-transform:uppercase;margin:0}
+.dlg p{margin:0}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .marquee__t{animation:none}
+}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lipss-logo" viewBox="0 0 76 36"><path d="M13.0472 17.9323C12.6247 17.9323 12.2219 18.0827 11.913 18.3479C11.2982 17.8171 10.2609 17.8171 9.64612 18.3479C9.02788 17.8171 7.99552 17.8171 7.37728 18.3479C6.8868 17.9255 6.1266 17.8186 5.5343 18.0808C5.63318 17.8631 5.68458 17.625 5.68458 17.3788C5.68458 16.9612 5.53235 16.5645 5.2641 16.2592C5.53284 15.9539 5.68458 15.5557 5.68458 15.1381C5.68458 14.7206 5.53235 14.3224 5.2641 14.0171C5.53284 13.7132 5.68458 13.3165 5.68458 12.8975C5.68458 12.4785 5.53235 12.0818 5.2641 11.7765C5.53284 11.4712 5.68458 11.0744 5.68458 10.6554C5.68458 10.2364 5.53235 9.83969 5.2641 9.53439C5.53284 9.23055 5.68458 8.8338 5.68458 8.41481C5.68458 7.99581 5.53235 7.59761 5.2641 7.29377C5.53284 6.98847 5.68458 6.59028 5.68458 6.17273C5.68458 5.75518 5.53235 5.35699 5.2641 5.05314C5.53284 4.74591 5.68458 4.34965 5.68458 3.9321C5.68458 3.51456 5.53235 3.11636 5.2641 2.81106C5.53284 2.50577 5.68458 2.10902 5.68458 1.69002C5.68458 0.742198 4.93369 0 3.97573 0C3.55329 0 3.15043 0.150472 2.84156 0.415612C2.53415 0.150472 2.13276 0 1.70885 0C0.750895 0 0 0.742198 0 1.68906C0 2.10806 0.152235 2.5048 0.420482 2.8101C0.151745 3.11539 0 3.51214 0 3.93113C0 4.35013 0.152235 4.74542 0.420482 5.05217C0.151745 5.35602 0 5.75276 0 6.17176C0 6.59076 0.152235 6.9875 0.420482 7.2928C0.151745 7.59665 0 7.99484 0 8.41384C0 8.83284 0.152235 9.22958 0.420482 9.53342C0.151745 9.83872 0 10.2369 0 10.6545C0 11.072 0.152235 11.4702 0.420482 11.7755C0.151745 12.0808 0 12.4775 0 12.8965C0 13.3155 0.152235 13.7123 0.420482 14.0161C0.151745 14.3214 0 14.7196 0 15.1372C0 15.5547 0.152235 15.9529 0.420482 16.2582C0.151745 16.5635 0 16.9602 0 17.3778C0 17.7953 0.152235 18.195 0.420482 18.4988C0.151745 18.8041 0 19.2023 0 19.6199C0 20.0374 0.152235 20.4356 0.420482 20.7409C0.151745 21.0448 0 21.4429 0 21.8619C0 22.8088 0.750895 23.551 1.70885 23.551C2.13129 23.551 2.53415 23.4005 2.84156 23.1335C3.4598 23.6676 4.49216 23.6676 5.1104 23.1335C5.72864 23.6676 6.75904 23.6676 7.37728 23.1335C7.99552 23.6676 9.02788 23.6676 9.64612 23.1335C10.2609 23.6662 11.2982 23.6691 11.913 23.1335C12.2219 23.4005 12.6247 23.551 13.0472 23.551C14.0051 23.551 14.756 22.8088 14.756 21.8619C14.756 21.4429 14.6038 21.0448 14.3355 20.7409C14.6043 20.4356 14.756 20.0374 14.756 19.6199C14.756 18.673 14.0051 17.9308 13.0472 17.9308V17.9323Z"/><path d="M19.8551 0C19.4312 0 19.0298 0.150472 18.721 0.415612C18.4121 0.149988 18.0107 0 17.5868 0C16.6288 0 15.8779 0.742198 15.8779 1.68906C15.8779 2.10806 16.0302 2.5048 16.2984 2.8101C16.0297 3.11539 15.8779 3.51214 15.8779 3.93113C15.8779 4.35013 16.0302 4.74542 16.2984 5.05217C16.0297 5.35602 15.8779 5.75276 15.8779 6.17176C15.8779 6.59076 16.0302 6.9875 16.2984 7.2928C16.0297 7.59665 15.8779 7.99484 15.8779 8.41384C15.8779 8.83284 16.0302 9.22958 16.2984 9.53342C16.0297 9.83872 15.8779 10.2369 15.8779 10.6545C15.8779 11.072 16.0302 11.4702 16.2984 11.7755C16.0297 12.0808 15.8779 12.4775 15.8779 12.8965C15.8779 13.3155 16.0302 13.7123 16.2984 14.0161C16.0297 14.3214 15.8779 14.7196 15.8779 15.1372C15.8779 15.5547 16.0302 15.9529 16.2984 16.2582C16.0297 16.5635 15.8779 16.9602 15.8779 17.3778C15.8779 17.7953 16.0302 18.195 16.2984 18.4988C16.0297 18.8041 15.8779 19.2023 15.8779 19.6199C15.8779 20.0374 16.0302 20.4356 16.2984 20.7409C16.0297 21.0448 15.8779 21.4429 15.8779 21.8619C15.8779 22.8088 16.6288 23.551 17.5868 23.551C18.0092 23.551 18.4121 23.4005 18.721 23.1335C19.0298 23.4005 19.4327 23.551 19.8551 23.551C20.8131 23.551 21.564 22.8088 21.564 21.8619C21.564 21.4429 21.4117 21.0448 21.1415 20.7409C21.4117 20.4356 21.564 20.0374 21.564 19.6199C21.564 19.2023 21.4117 18.8041 21.1415 18.4988C21.4117 18.195 21.564 17.7968 21.564 17.3778C21.564 16.9588 21.4117 16.5635 21.1415 16.2582C21.4117 15.9529 21.564 15.5547 21.564 15.1372C21.564 14.7196 21.4117 14.3214 21.1415 14.0161C21.4117 13.7123 21.564 13.3141 21.564 12.8965C21.564 12.479 21.4117 12.0808 21.1415 11.7755C21.4117 11.4702 21.564 11.072 21.564 10.6545C21.564 10.2369 21.4117 9.83872 21.1415 9.53342C21.4117 9.22958 21.564 8.83138 21.564 8.41384C21.564 7.99629 21.4117 7.59665 21.1415 7.2928C21.4117 6.9875 21.564 6.58931 21.564 6.17176C21.564 5.75421 21.4117 5.35602 21.1415 5.05217C21.4117 4.74494 21.564 4.34675 21.564 3.93113C21.564 3.51552 21.4117 3.11539 21.1415 2.8101C21.4117 2.5048 21.564 2.1066 21.564 1.68906C21.564 0.742198 20.8131 0 19.8551 0Z"/><path d="M37.9977 4.48367C37.7485 4.48367 37.5072 4.53641 37.2874 4.63221C37.3863 4.41642 37.4377 4.17644 37.4377 3.93162C37.4377 2.98476 36.6868 2.24256 35.7288 2.24256C35.4797 2.24256 35.2383 2.29385 35.02 2.3911C35.1189 2.17337 35.1703 1.93533 35.1703 1.68906C35.1703 0.742198 34.4194 0 33.4614 0C33.0375 0 32.6361 0.150472 32.3273 0.415612C31.711 -0.1137 30.6786 -0.115152 30.0584 0.415612C29.4436 -0.115152 28.4098 -0.115152 27.7915 0.415612C27.1733 -0.115152 26.1395 -0.115152 25.5247 0.415612C25.2158 0.149988 24.8129 0 24.3905 0C23.4325 0 22.6816 0.742198 22.6816 1.68906C22.6816 2.10806 22.8339 2.5048 23.1021 2.8101C22.8334 3.11539 22.6816 3.51214 22.6816 3.93113C22.6816 4.35013 22.8339 4.74542 23.1021 5.05217C22.8334 5.35602 22.6816 5.75276 22.6816 6.17176C22.6816 6.59076 22.8339 6.9875 23.1021 7.2928C22.8334 7.59665 22.6816 7.99484 22.6816 8.41384C22.6816 8.83284 22.8339 9.22958 23.1021 9.53342C22.8334 9.83872 22.6816 10.2369 22.6816 10.6545C22.6816 11.072 22.8339 11.4702 23.1021 11.7755C22.8334 12.0808 22.6816 12.4775 22.6816 12.8965C22.6816 13.3155 22.8339 13.7123 23.1021 14.0161C22.8334 14.3214 22.6816 14.7196 22.6816 15.1372C22.6816 15.5547 22.8339 15.9529 23.1021 16.2582C22.8334 16.5635 22.6816 16.9602 22.6816 17.3778C22.6816 17.7953 22.8339 18.195 23.1021 18.4988C22.8334 18.8041 22.6816 19.2023 22.6816 19.6199C22.6816 20.0374 22.8339 20.4356 23.1021 20.7409C22.8334 21.0448 22.6816 21.4429 22.6816 21.8619C22.6816 22.8088 23.4325 23.551 24.3905 23.551C24.8129 23.551 25.2158 23.4005 25.5247 23.1335C25.8321 23.4005 26.2349 23.551 26.6574 23.551C27.6153 23.551 28.3662 22.8088 28.3662 21.8619C28.3662 21.4429 28.214 21.0448 27.9457 20.7409C28.2145 20.4356 28.3662 20.0374 28.3662 19.6199C28.3662 19.2023 28.214 18.8041 27.9457 18.4988C28.2145 18.195 28.3662 17.7968 28.3662 17.3778C28.3662 17.133 28.3143 16.8949 28.2159 16.6772C28.8112 16.9409 29.5704 16.8325 30.0589 16.4101C30.6772 16.9428 31.7095 16.9394 32.3278 16.4101C32.6366 16.6758 33.038 16.8257 33.4619 16.8257C34.4199 16.8257 35.1708 16.0835 35.1708 15.1367C35.1708 14.8919 35.1189 14.6538 35.0205 14.4361C35.2408 14.5338 35.4816 14.5846 35.7293 14.5846C36.6873 14.5846 37.4382 13.8424 37.4382 12.8956C37.4382 12.6493 37.3863 12.4108 37.2879 12.1935C37.5082 12.2913 37.749 12.3421 37.9981 12.3421C38.9561 12.3421 39.707 11.5999 39.707 10.653C39.707 10.2355 39.5548 9.83727 39.2865 9.53197C39.5552 9.22813 39.707 8.83138 39.707 8.41239C39.707 7.99339 39.5548 7.59519 39.2865 7.29135C39.5552 6.98605 39.707 6.58786 39.707 6.17031C39.707 5.22345 38.9561 4.48125 37.9981 4.48125L37.9977 4.48367ZM34.1707 11.356C33.5799 11.0967 32.8177 11.2041 32.3278 11.6245C32.0189 11.3589 31.6175 11.2089 31.1936 11.2089C30.7697 11.2089 30.3683 11.3594 30.0594 11.6245C29.5709 11.2022 28.8102 11.0938 28.2164 11.3575C28.3153 11.1397 28.3667 10.9017 28.3667 10.6554C28.3667 10.2379 28.2145 9.83969 27.9462 9.53439C28.215 9.23055 28.3667 8.8338 28.3667 8.41481C28.3667 7.99581 28.2145 7.59761 27.9462 7.29377C28.215 6.98847 28.3667 6.59028 28.3667 6.17273C28.3667 5.92646 28.3148 5.68793 28.2179 5.47214C28.8068 5.73583 29.5738 5.62745 30.0594 5.20361C30.6776 5.73776 31.7129 5.73776 32.3282 5.20361C32.8153 5.62745 33.5775 5.73292 34.1698 5.47407C34.0728 5.68986 34.0209 5.92839 34.0209 6.17321C34.0209 6.59221 34.1732 6.98895 34.4434 7.29425C34.1732 7.5981 34.0209 7.99484 34.0209 8.41529C34.0209 8.83574 34.1732 9.23248 34.4434 9.53488C34.1732 9.84017 34.0209 10.2369 34.0209 10.6559C34.0209 10.9022 34.0728 11.1407 34.1712 11.3565L34.1707 11.356Z"/><path d="M56.1432 2.24256C55.894 2.24256 55.6527 2.29385 55.4344 2.38965C55.5332 2.17386 55.5846 1.93533 55.5846 1.68906C55.5846 0.742198 54.8337 0 53.8758 0C53.4519 0 53.0505 0.150472 52.7416 0.415612C52.1253 -0.1137 51.093 -0.115152 50.4728 0.415612C49.858 -0.115152 48.8241 -0.115152 48.2059 0.415612C47.5877 -0.115152 46.5538 -0.115152 45.939 0.415612C45.6301 0.149988 45.2273 0 44.8048 0C43.8469 0 43.096 0.742198 43.096 1.68906C43.096 1.93533 43.1479 2.17386 43.2463 2.3911C43.026 2.29336 42.7852 2.24256 42.536 2.24256C41.578 2.24256 40.8271 2.98476 40.8271 3.93162C40.8271 4.34917 40.9794 4.74736 41.2496 5.05266C40.9794 5.35505 40.8271 5.75325 40.8271 6.17224C40.8271 6.59124 40.9794 6.98799 41.2496 7.29328C40.9794 7.59713 40.8271 7.99387 40.8271 8.41432C40.8271 9.36118 41.578 10.1034 42.536 10.1034C42.7852 10.1034 43.0265 10.0521 43.2463 9.95484C43.1474 10.1706 43.096 10.4092 43.096 10.6554C43.096 11.6023 43.8469 12.3445 44.8048 12.3445C45.054 12.3445 45.2953 12.2932 45.5136 12.196C45.4148 12.4137 45.3634 12.6517 45.3634 12.898C45.3634 13.8449 46.1143 14.587 47.0722 14.587C47.4946 14.587 47.8975 14.4366 48.2064 14.1695C48.6969 14.5933 49.459 14.7037 50.0479 14.438C49.951 14.6558 49.8991 14.8938 49.8991 15.1386C49.8991 16.0855 50.65 16.8277 51.6079 16.8277C51.8571 16.8277 52.0984 16.7764 52.3182 16.6791C52.2193 16.8969 52.1679 17.1349 52.1679 17.3797C52.1679 17.6245 52.2198 17.8645 52.3182 18.0818C51.7259 17.8195 50.9637 17.9265 50.4738 18.3488C49.8589 17.8181 48.8251 17.8181 48.2069 18.3488C47.7183 17.9284 46.9577 17.8195 46.3654 18.0803C46.4623 17.8645 46.5142 17.626 46.5142 17.3797C46.5142 16.4329 45.7633 15.6926 44.8053 15.6926C44.3814 15.6926 43.98 15.8431 43.6712 16.1082C43.3623 15.8426 42.9609 15.6926 42.537 15.6926C41.579 15.6926 40.8281 16.4334 40.8281 17.3797C40.8281 17.8002 40.9804 18.1969 41.2506 18.5008C40.9804 18.8061 40.8281 19.2028 40.8281 19.6218C40.8281 20.5687 41.579 21.3109 42.537 21.3109C42.7861 21.3109 43.0275 21.2596 43.2472 21.1623C43.1484 21.3801 43.097 21.6181 43.097 21.8644C43.097 22.8112 43.8479 23.5534 44.8058 23.5534C45.2283 23.5534 45.6311 23.403 45.94 23.1359C46.5548 23.67 47.5886 23.67 48.2069 23.1359C48.8251 23.67 49.8589 23.67 50.4738 23.1359C51.092 23.67 52.1244 23.67 52.7426 23.1359C53.0515 23.403 53.4543 23.5534 53.8768 23.5534C54.8347 23.5534 55.5856 22.8112 55.5856 21.8644C55.5856 21.6181 55.5337 21.3796 55.4368 21.1638C55.6551 21.2596 55.8964 21.3109 56.1441 21.3109C57.1021 21.3109 57.853 20.5687 57.853 19.6218C57.853 19.2043 57.7008 18.8061 57.4325 18.5008C57.7012 18.1969 57.853 17.7987 57.853 17.3797C57.853 16.9607 57.7008 16.5654 57.4325 16.2601C57.7012 15.9548 57.853 15.5566 57.853 15.1391C57.853 14.1922 57.1021 13.45 56.1441 13.45C55.8964 13.45 55.6556 13.5013 55.4353 13.5986C55.5342 13.3828 55.5856 13.1443 55.5856 12.898C55.5856 11.9511 54.8347 11.2089 53.8768 11.2089C53.6276 11.2089 53.3863 11.2602 53.1665 11.3575C53.2654 11.1397 53.3168 10.9017 53.3168 10.6554C53.3168 9.70857 52.5659 8.96637 51.6079 8.96637C51.1855 8.96637 50.7826 9.11685 50.4738 9.38198C49.9852 8.9596 49.2211 8.85122 48.6322 9.11491C48.7292 8.89719 48.7811 8.66059 48.7811 8.41432C48.7811 7.46601 48.0302 6.72381 47.0722 6.72381C46.8245 6.72381 46.5837 6.7751 46.3649 6.87235C46.4618 6.65462 46.5137 6.41658 46.5137 6.17176C46.5137 5.92694 46.4618 5.6889 46.3649 5.47262C46.9572 5.73196 47.7193 5.626 48.2064 5.20216C48.8212 5.73631 49.8619 5.73631 50.4733 5.20216C50.9637 5.626 51.7259 5.73292 52.3162 5.47069C52.2193 5.68648 52.1674 5.92501 52.1674 6.17128C52.1674 7.11814 52.9183 7.86033 53.8763 7.86033C54.2987 7.86033 54.7016 7.70986 55.0104 7.44472C55.3179 7.71035 55.7192 7.86033 56.1432 7.86033C57.1011 7.86033 57.852 7.11814 57.852 6.17128C57.852 5.75228 57.6998 5.35554 57.4315 5.05169C57.7003 4.74446 57.852 4.3482 57.852 3.93065C57.852 2.98379 57.1011 2.24159 56.1432 2.24159V2.24256Z"/><path d="M72.0213 7.8613C72.4452 7.8613 72.8466 7.71083 73.1555 7.44569C73.4643 7.71131 73.8657 7.8613 74.2896 7.8613C75.2476 7.8613 75.9985 7.1191 75.9985 6.17224C75.9985 5.75325 75.8463 5.3565 75.578 5.05266C75.8467 4.74542 75.9985 4.34917 75.9985 3.93162C75.9985 2.98476 75.2476 2.24256 74.2896 2.24256C74.0405 2.24256 73.7992 2.29385 73.5794 2.3911C73.6783 2.17337 73.7297 1.93533 73.7297 1.68906C73.7297 0.742198 72.9788 0 72.0208 0C71.5984 0 71.1955 0.150472 70.8866 0.415612C70.2718 -0.115152 69.238 -0.115152 68.6197 0.415612C68.0049 -0.1137 66.9711 -0.115152 66.3509 0.415612C65.7361 -0.115152 64.7023 -0.115152 64.084 0.415612C63.7751 0.149988 63.3738 0 62.9499 0C61.9919 0 61.241 0.742198 61.241 1.68906C61.241 1.93533 61.2929 2.17386 61.3913 2.3911C61.173 2.29336 60.9316 2.24256 60.6825 2.24256C59.7245 2.24256 58.9736 2.98476 58.9736 3.93162C58.9736 4.34917 59.1259 4.74591 59.3941 5.05266C59.1254 5.3565 58.9736 5.75325 58.9736 6.17224C58.9736 6.59124 59.1259 6.98798 59.3941 7.29328C59.1254 7.59713 58.9736 7.99532 58.9736 8.41432C58.9736 9.36118 59.7245 10.1034 60.6825 10.1034C60.9302 10.1034 61.171 10.0521 61.3913 9.95484C61.2924 10.1726 61.241 10.4106 61.241 10.6554C61.241 11.6023 61.9919 12.3445 62.9499 12.3445C63.199 12.3445 63.4403 12.2932 63.6601 12.196C63.5612 12.4137 63.5098 12.6517 63.5098 12.898C63.5098 13.8449 64.2607 14.5871 65.2187 14.5871C65.6411 14.5871 66.044 14.4366 66.3514 14.1695C66.8433 14.5948 67.6021 14.7003 68.1958 14.438C68.097 14.6538 68.0456 14.8923 68.0456 15.1386C68.0456 16.0855 68.7965 16.8277 69.7544 16.8277C70.0036 16.8277 70.2449 16.7764 70.4632 16.6791C70.3643 16.8969 70.3129 17.1349 70.3129 17.3797C70.3129 17.6245 70.3648 17.8645 70.4632 18.0803C69.8724 17.821 69.1102 17.9269 68.6202 18.3488C68.0054 17.8195 66.9716 17.8181 66.3514 18.3488C65.8629 17.9265 65.1022 17.8161 64.5084 18.0818C64.6073 17.864 64.6587 17.626 64.6587 17.3797C64.6587 16.4329 63.9078 15.6926 62.9499 15.6926C62.5259 15.6926 62.1246 15.8431 61.8171 16.1082C61.5083 15.8426 61.1054 15.6926 60.683 15.6926C59.725 15.6926 58.9741 16.4334 58.9741 17.3797C58.9741 17.7987 59.1264 18.1969 59.3946 18.5008C59.1259 18.8061 58.9741 19.2043 58.9741 19.6218C58.9741 20.5687 59.725 21.3109 60.683 21.3109C60.9307 21.3109 61.1715 21.2596 61.3918 21.1638C61.2929 21.3796 61.2415 21.6181 61.2415 21.8644C61.2415 22.8112 61.9924 23.5534 62.9503 23.5534C63.3728 23.5534 63.7756 23.403 64.0845 23.1359C64.7028 23.67 65.7366 23.67 66.3514 23.1359C66.9696 23.67 68.002 23.67 68.6202 23.1359C69.2385 23.67 70.2723 23.67 70.8871 23.1359C71.196 23.403 71.5989 23.5534 72.0213 23.5534C72.9792 23.5534 73.7301 22.8112 73.7301 21.8644C73.7301 21.6181 73.6783 21.3796 73.5799 21.1623C73.8001 21.2601 74.041 21.3109 74.2901 21.3109C75.2481 21.3109 75.999 20.5687 75.999 19.6218C75.999 19.2043 75.8468 18.8061 75.5785 18.5008C75.8472 18.1969 75.999 17.7987 75.999 17.3797C75.999 16.9607 75.8468 16.5654 75.5785 16.2601C75.8472 15.9548 75.999 15.5567 75.999 15.1391C75.999 14.1922 75.2481 13.45 74.2901 13.45C74.041 13.45 73.7997 13.5013 73.5799 13.5986C73.6787 13.3828 73.7301 13.1443 73.7301 12.898C73.7301 11.9511 72.9792 11.2089 72.0213 11.2089C71.7721 11.2089 71.5308 11.2602 71.3125 11.3575C71.4114 11.1397 71.4628 10.9017 71.4628 10.6554C71.4628 9.70857 70.7119 8.96637 69.7539 8.96637C69.33 8.96637 68.9286 9.11685 68.6197 9.38198C68.1293 8.96153 67.374 8.85267 66.7768 9.11346C66.8757 8.89767 66.9271 8.65914 66.9271 8.41432C66.9271 7.46601 66.1762 6.72381 65.2182 6.72381C64.969 6.72381 64.7277 6.7751 64.5079 6.87235C64.6068 6.65656 64.6582 6.41803 64.6582 6.17176C64.6582 5.92549 64.6063 5.68696 64.5094 5.47117C65.1002 5.73486 65.8653 5.62648 66.3509 5.20264C66.9691 5.7368 68.0044 5.7368 68.6197 5.20264C69.1068 5.62648 69.8704 5.73341 70.4627 5.47117C70.3638 5.6889 70.3124 5.92694 70.3124 6.17176C70.3124 7.11862 71.0633 7.86082 72.0213 7.86082V7.8613Z"/><path d="M22.3062 36.0003C22.2343 36.0003 22.179 35.9795 22.1398 35.9374C22.1006 35.8953 22.0811 35.842 22.0811 35.7777V29.4492C22.0811 29.3848 22.1006 29.3316 22.1398 29.2895C22.179 29.2474 22.2343 29.2266 22.3062 29.2266H22.8251C22.8902 29.2266 22.9426 29.2474 22.9817 29.2895C23.0209 29.3316 23.0405 29.3848 23.0405 29.4492V35.1584H26.3006C26.3725 35.1584 26.4278 35.1792 26.467 35.2213C26.5061 35.2634 26.5257 35.3195 26.5257 35.3906V35.7777C26.5257 35.842 26.5061 35.8953 26.467 35.9374C26.4278 35.9795 26.3725 36.0003 26.3006 36.0003H22.3062Z"/><path d="M27.816 36.0003C27.744 36.0003 27.6887 35.9795 27.6496 35.9374C27.6104 35.8953 27.5908 35.842 27.5908 35.7777V29.4492C27.5908 29.3848 27.6104 29.3316 27.6496 29.2895C27.6887 29.2474 27.744 29.2266 27.816 29.2266H28.3349C28.4 29.2266 28.4538 29.2474 28.4964 29.2895C28.539 29.3316 28.56 29.3848 28.56 29.4492V35.7777C28.56 35.842 28.539 35.8953 28.4964 35.9374C28.4538 35.9795 28.4 36.0003 28.3349 36.0003H27.816Z"/><path d="M30.4918 36.0003C30.4198 36.0003 30.3645 35.9795 30.3253 35.9374C30.2862 35.8953 30.2666 35.842 30.2666 35.7777V29.4588C30.2666 29.3877 30.2862 29.3316 30.3253 29.2895C30.3645 29.2474 30.4198 29.2266 30.4918 29.2266H32.9784C33.4616 29.2266 33.8806 29.304 34.2365 29.4588C34.5923 29.6137 34.8679 29.8445 35.0637 30.1507C35.2595 30.457 35.3574 30.8392 35.3574 31.2974C35.3574 31.7556 35.2595 32.1359 35.0637 32.4393C34.8679 32.7426 34.5923 32.9715 34.2365 33.1263C33.8806 33.2811 33.4616 33.3585 32.9784 33.3585H31.2456V35.7777C31.2456 35.842 31.2246 35.8953 31.182 35.9374C31.1394 35.9795 31.0826 36.0003 31.0106 36.0003H30.4918ZM31.2358 32.5457H32.9295C33.4126 32.5457 33.7749 32.4393 34.0162 32.2264C34.2575 32.0135 34.3784 31.7038 34.3784 31.2974C34.3784 30.891 34.2609 30.5876 34.026 30.3685C33.791 30.1493 33.4254 30.0394 32.9295 30.0394H31.2358V32.5457Z"/><path d="M36.776 36.0003C36.704 36.0003 36.6487 35.9795 36.6095 35.9374C36.5704 35.8953 36.5508 35.842 36.5508 35.7777V29.4588C36.5508 29.3877 36.5704 29.3316 36.6095 29.2895C36.6487 29.2474 36.704 29.2266 36.776 29.2266H39.2626C39.7458 29.2266 40.1648 29.304 40.5206 29.4588C40.8765 29.6137 41.1521 29.8445 41.3479 30.1507C41.5437 30.457 41.6416 30.8392 41.6416 31.2974C41.6416 31.7556 41.5437 32.1359 41.3479 32.4393C41.1521 32.7426 40.8765 32.9715 40.5206 33.1263C40.1648 33.2811 39.7458 33.3585 39.2626 33.3585H37.5298V35.7777C37.5298 35.842 37.5087 35.8953 37.4661 35.9374C37.4236 35.9795 37.3668 36.0003 37.2948 36.0003H36.776ZM37.52 32.5457H39.2137C39.6968 32.5457 40.059 32.4393 40.3004 32.2264C40.5417 32.0135 40.6626 31.7038 40.6626 31.2974C40.6626 30.891 40.5451 30.5876 40.3102 30.3685C40.0752 30.1493 39.7095 30.0394 39.2137 30.0394H37.52V32.5457Z"/><path d="M43.0611 36.0003C42.9892 36.0003 42.9338 35.9795 42.8947 35.9374C42.8555 35.8953 42.8359 35.842 42.8359 35.7777V29.4588C42.8359 29.3877 42.8555 29.3316 42.8947 29.2895C42.9338 29.2474 42.9892 29.2266 43.0611 29.2266H47.1044C47.1763 29.2266 47.2317 29.2474 47.2708 29.2895C47.31 29.3316 47.3296 29.3877 47.3296 29.4588V29.8266C47.3296 29.8977 47.31 29.9524 47.2708 29.9911C47.2317 30.0298 47.1763 30.0491 47.1044 30.0491H43.7758V32.1683H46.889C46.961 32.1683 47.0163 32.1891 47.0554 32.2312C47.0946 32.2733 47.1142 32.3299 47.1142 32.4005V32.7586C47.1142 32.8229 47.0946 32.8762 47.0554 32.9182C47.0163 32.9603 46.961 32.9811 46.889 32.9811H43.7758V35.1777H47.1827C47.2547 35.1777 47.31 35.1971 47.3491 35.2358C47.3883 35.2745 47.4079 35.3292 47.4079 35.4003V35.7777C47.4079 35.842 47.3883 35.8953 47.3491 35.9374C47.31 35.9795 47.2547 36.0003 47.1827 36.0003H43.0611Z"/><path d="M48.9937 36.0003C48.9218 36.0003 48.8665 35.9795 48.8273 35.9374C48.7881 35.8953 48.7686 35.842 48.7686 35.7777V29.4588C48.7686 29.3877 48.7881 29.3316 48.8273 29.2895C48.8665 29.2474 48.9218 29.2266 48.9937 29.2266H51.3825C52.1202 29.2266 52.7041 29.3974 53.1349 29.7395C53.5657 30.0815 53.781 30.5881 53.781 31.2587C53.781 31.7556 53.6552 32.1601 53.4041 32.4731C53.153 32.7862 52.8118 33.0039 52.3811 33.1263L53.8887 35.7003C53.9083 35.739 53.9181 35.7743 53.9181 35.8067C53.9181 35.8585 53.8971 35.9035 53.8545 35.9422C53.8119 35.9809 53.7649 36.0003 53.7125 36.0003H53.2426C53.1315 36.0003 53.0502 35.9712 52.9978 35.9132C52.9455 35.8551 52.8999 35.797 52.8608 35.739L51.4412 33.2811H49.728V35.7777C49.728 35.842 49.7069 35.8953 49.6643 35.9374C49.6218 35.9795 49.565 36.0003 49.493 36.0003H48.9937ZM49.728 32.4586H51.3433C51.8328 32.4586 52.1985 32.357 52.4398 32.1538C52.6811 31.9506 52.802 31.6492 52.802 31.249C52.802 30.8489 52.6831 30.5557 52.4447 30.3491C52.2063 30.1425 51.8392 30.0394 51.3433 30.0394H49.728V32.4586Z"/><path d="M57.3682 29.4324C58.2356 29.4325 58.9375 30.1282 58.9375 30.9852C58.9375 31.8421 58.2356 32.5378 57.3682 32.5379C56.5006 32.5379 55.7989 31.8422 55.7988 30.9852C55.7988 30.1281 56.5006 29.4324 57.3682 29.4324Z" stroke="white" stroke-width="0.14955"/><path d="M57.0833 31.4912C57.0743 31.4912 57.0667 31.4881 57.0603 31.4818C57.054 31.4754 57.0509 31.4678 57.0509 31.4588V30.5783C57.0509 30.5684 57.054 30.5603 57.0603 30.554C57.0667 30.5476 57.0743 30.5445 57.0833 30.5445H57.4336C57.5427 30.5445 57.6288 30.5697 57.692 30.6202C57.7551 30.6707 57.7866 30.7442 57.7866 30.8407C57.7866 30.9074 57.7699 30.9629 57.7366 31.007C57.7041 31.0512 57.6604 31.0832 57.6054 31.1031L57.8029 31.4479C57.8056 31.4534 57.8069 31.4583 57.8069 31.4628C57.8069 31.4709 57.8038 31.4777 57.7974 31.4831C57.792 31.4885 57.7857 31.4912 57.7785 31.4912H57.6554C57.6401 31.4912 57.6284 31.4872 57.6203 31.4791C57.6122 31.4709 57.6058 31.4628 57.6013 31.4547L57.4269 31.1342H57.2389V31.4588C57.2389 31.4678 57.2357 31.4754 57.2294 31.4818C57.224 31.4881 57.2163 31.4912 57.2064 31.4912H57.0833ZM57.2389 30.9813H57.4296C57.4846 30.9813 57.5256 30.9692 57.5526 30.9448C57.5797 30.9196 57.5932 30.8844 57.5932 30.8393C57.5932 30.7942 57.5797 30.7591 57.5526 30.7338C57.5265 30.7077 57.4855 30.6946 57.4296 30.6946H57.2389V30.9813Z"/></symbol></svg>
+
+<header class="nav wrap" id="nav">
+  <a class="nav__logo" href="#top" aria-label="LIPSS home"><svg class="logo" viewBox="0 0 76 36"><use href="#lipss-logo"/></svg></a>
+  <nav aria-label="Main">
+    <ul class="nav__links">
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#lipper">THE LIPPER</a></li>
+      <li><a href="#community">THE COMMUNITY</a></li>
+      <li><a href="#uae">UAE</a></li>
+      <li><a href="#partners">PARTNERS</a></li>
+    </ul>
+  </nav>
+  <div class="nav__cta"><a class="btn" href="#enquiry">Contact us</a></div>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i></button>
+</header>
+
+<div class="menu wrap" id="menu" aria-hidden="true">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#lipper">The Lipper</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#uae">UAE</a></li>
+    <li><a href="#partners">Partners</a></li>
+  </ul>
+  <div class="menu__foot">
+    <a class="btn btn--light" href="#enquiry">Contact us <span class="arr">→</span></a>
+    <span class="eyebrow">@lipss.uae · A new era of lip care</span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- 1 · HERO -->
+<section class="hero wrap" aria-labelledby="hero-h">
+  <div class="hero__eyebrow">
+    <p class="eyebrow">LIPSS · Est. 2024</p>
+    <p class="eyebrow">Now in the UAE</p>
+  </div>
+  <h1 class="h hero__h" id="hero-h">
+    <span class="ln"><span>A new era</span></span>
+    <span class="ln"><span>of lip care</span></span>
+  </h1>
+  <div class="hero__media">
+    <div class="frame hero__main sheen">
+      <img src="assets/img/cherry-model-720.webp" srcset="assets/img/cherry-model-720.webp 720w, assets/img/cherry-model-1400.webp 1400w" sizes="(min-width:1024px) 40vw, 92vw" width="720" height="1080" alt="Model applying a cherry-red LIPSS Lipper, holding a pair of cherries" fetchpriority="high">
+    </div>
+    <span class="hero__tag">The Lipper · Cherry</span>
+  </div>
+  <div class="hero__copy">
+    <p>Born in 2024, LIPSS is a modern lip care brand where beauty meets care.</p>
+    <div class="btns">
+      <a class="btn" href="#about">Discover LIPSS</a>
+      <a class="btn btn--ghost" href="#lipper">Meet the Lipper <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__t"><span>Beauty that cares</span><b>●</b><span>Ceramides</span><b>●</b><span>Peptides</span><b>●</b><span>Vitamin E</span><b>●</b><span>From Ukraine to the UAE</span><b>●</b></div><div class="marquee__t"><span>Beauty that cares</span><b>●</b><span>Ceramides</span><b>●</b><span>Peptides</span><b>●</b><span>Vitamin E</span><b>●</b><span>From Ukraine to the UAE</span><b>●</b></div>
+</div>
+
+<!-- 2 · ABOUT -->
+<section class="about wrap" id="about" aria-labelledby="about-h">
+  <h2 class="h about__h rv" id="about-h">Beauty that cares.</h2>
+  <div class="about__grid">
+    <div class="frame about__img rv">
+      <img src="assets/img/butter-800.webp" srcset="assets/img/butter-800.webp 800w, assets/img/butter-1600.webp 1600w" sizes="(min-width:860px) 55vw, 92vw" width="800" height="356" alt="A block of balm-textured butter carved with the LIPSS logo" loading="lazy">
+    </div>
+    <div class="body rv">
+      <p class="about__statement">Born in 2024, LIPSS is a modern lip care brand where <em>beauty</em> meets <em>care</em>.</p>
+      <p>Our signature product is the Lipper — a lip gloss that has become a favourite among tens of thousands of girls across Ukraine and Europe.</p>
+      <p>We created LIPSS because we wanted lip care to be something you actually look forward to using. Something with a great texture, a good scent, beautiful colours and a formula that takes care of your lips.</p>
+      <p class="about__sign">LIPSS — beauty that cares.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · MEET THE LIPPER + WHAT'S INSIDE -->
+<section class="lipper wrap" id="lipper" aria-labelledby="lipper-h">
+  <h2 class="eyebrow" id="lipper-h">Meet the Lipper</h2>
+  <p class="h lipper__big rv">More than a gloss.</p>
+  <div class="lipper__stage">
+    <div class="frame lipper__hero rv sheen">
+      <img src="assets/img/fig-720.webp" srcset="assets/img/fig-720.webp 720w, assets/img/fig-1400.webp 1400w" sizes="(min-width:900px) 50vw, 92vw" width="720" height="900" alt="A plum LIPSS Fig Lipper with ceramides and peptides lying on halved fresh figs" loading="lazy">
+    </div>
+    <div class="lipper__copy">
+      <p class="lede rv">The Lipper is what started it all.</p>
+      <div class="body rv">
+        <p>It gives your lips the shine you want while caring for them at the same time. Every detail has been considered — from the texture and scent to the colour and the formula.</p>
+        <p>Because we don't think you should have to choose between looking good and taking care of your lips.</p>
+      </div>
+    </div>
+  </div>
+  <div class="inside" id="inside">
+    <h3 class="eyebrow">What's inside</h3>
+    <div class="inside__row">
+      <article class="ing rv">
+        <div class="frame"><img src="assets/img/ing-hydration-900.webp" width="900" height="1125" style="object-position:50% 30%" alt="Clear balm swirled at the tip of a navy LIPSS tube" loading="lazy"></div>
+        <div><small>Ceramides</small><h3>Hydration</h3><p>Ceramides help hydrate the lips and support their natural lipid barrier, leaving them soft and comfortable.</p></div>
+      </article>
+      <article class="ing rv">
+        <div class="frame"><img src="assets/img/leopard-gloss-720.webp" srcset="assets/img/leopard-gloss-720.webp 720w, assets/img/leopard-gloss-1400.webp 1400w" sizes="(min-width:900px) 30vw, 96px" width="720" height="900" alt="Two leopard-print LIPSS tubes in a pool of red shimmer gloss" loading="lazy"></div>
+        <div><small>Peptides + vitamin E</small><h3>Recovery</h3><p>Peptides and vitamin E help care for delicate lip skin and support its elasticity.</p></div>
+      </article>
+      <article class="ing rv">
+        <div class="frame"><img src="assets/img/ing-recovery-900.webp" width="900" height="1350" style="object-position:60% 62%" alt="Smiling model touching her soft, glossy lips" loading="lazy"></div>
+        <div><small>Care + gloss</small><h3>Care</h3><p>Our formula brings together everyday lip care and a glossy finish, so your lips look good and feel good too.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · ATTENTION TO DETAIL -->
+<section class="detail wrap" aria-labelledby="detail-h">
+  <div class="detail__head">
+    <h2 class="h detail__h rv" id="detail-h">Made with attention to detail</h2>
+    <p class="lede rv">We care about the little things.</p>
+  </div>
+  <div class="strip">
+    <figure class="rv"><div class="frame"><img src="assets/img/det-feel-900.webp" width="900" height="1350" style="object-position:50% 60%" alt="Model applying a burgundy Lipper to glossy pouted lips" loading="lazy"></div><figcaption><span class="cap">Feel</span>The way the product feels when you apply it.</figcaption></figure>
+    <figure class="rv"><div class="frame"><img src="assets/img/det-scent-900.webp" width="900" height="1350" style="object-position:50% 55%" alt="Two Salted Caramel Lippers among caramel cubes with dripping caramel" loading="lazy"></div><figcaption><span class="cap">Scent</span>The scent you notice before you even put it on.</figcaption></figure>
+    <figure class="rv"><div class="frame"><img src="assets/img/det-colour-900.webp" width="900" height="1353" style="object-position:50% 35%" alt="Model blowing a kiss in deep red gloss, holding a Pomegranate Lipper over one eye" loading="lazy"></div><figcaption><span class="cap">Colour</span>The colour you keep reaching for.</figcaption></figure>
+    <figure class="rv"><div class="frame"><img src="assets/img/det-packaging2-900.webp" width="900" height="1350" style="object-position:50% 60%" alt="Two leopard-print Alter Ego Lippers beside their red LIPSS box in bright sunlight" loading="lazy"></div><figcaption><span class="cap">Packaging</span>The packaging you want to keep in your bag.</figcaption></figure>
+  </div>
+  <p class="detail__foot rv">Every LIPSS formula is developed with our team of technologists and designers, with a focus on both the product and the experience of using it.</p>
+</section>
+
+<!-- 5 · FROM UKRAINE TO THE UAE + LIPSS IN THE UAE -->
+<section class="journey wrap" id="uae" aria-labelledby="journey-h">
+  <canvas id="dunes" aria-hidden="true"></canvas>
+  <p class="eyebrow">The next chapter</p>
+  <h2 class="h journey__h rv" id="journey-h">From Ukraine to the UAE</h2>
+  <div class="route" aria-label="Kyiv to Dubai, about 3,500 kilometres">
+    <div class="route__ends">
+      <div><strong>Kyiv</strong>50.45° N · 30.52° E</div>
+      <div><strong>Dubai</strong>25.20° N · 55.27° E</div>
+    </div>
+    <div class="route__line"><i></i><b></b></div>
+    <div class="route__km">≈ 3,500 km</div>
+  </div>
+  <div class="journey__grid">
+    <div class="journey__copy">
+      <p class="lede rv">LIPSS was born in Ukraine and has grown across Ukraine and Europe. Now we're bringing the brand to the UAE. A new market, a new community and plenty of new LIPSS moments to come.</p>
+      <p class="h hello rv">Hello, <span class="hello__tag">UAE.</span></p>
+      <span class="live">LIPSS in the UAE · now building</span>
+      <div class="body rv">
+        <p>We are looking to build a community around LIPSS in the UAE — from beauty lovers and creators to retailers and local businesses. If you like what we're doing, we'd love to hear from you.</p>
+      </div>
+      <ul class="who" aria-label="Who we want to meet"><li>Beauty lovers</li><li>Creators</li><li>Retailers</li><li>Local businesses</li></ul>
+      <div class="btns"><a class="btn" href="#enquiry">Get in touch <span class="arr">→</span></a></div>
+    </div>
+    <div class="arch__wrap">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="frame arch rv sheen"><img src="assets/img/hello-uae-900.webp" srcset="assets/img/hello-uae-900.webp 900w, assets/img/hello-uae-1600.webp 1600w" sizes="(min-width:900px) 40vw, 92vw" width="900" height="599" style="object-position:50% 50%" alt="Model holding three colourful Lippers: mango, strawberry and lime" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · BECOME A PARTNER + WHY LIPSS -->
+<section class="partners wrap" id="partners" aria-labelledby="partners-h">
+  <div class="partners__left">
+    <p class="eyebrow">For business</p>
+    <h2 class="h partners__h rv" id="partners-h">Become a LIPSS partner</h2>
+    <p class="lede rv">We believe good collaborations should make sense for both sides.</p>
+    <ul class="types" aria-label="We're open to working with">
+      <li>Beauty salons</li><li>Beauty &amp; concept stores</li><li>Fashion brands</li><li>Showrooms</li><li>Fitness studios</li><li>Cafés</li><li>Creators &amp; influencers</li><li>Businesses that share our aesthetic</li>
+    </ul>
+    <p class="eyebrow" style="margin-top:8px">Why LIPSS</p>
+    <ul class="why">
+      <li><h3>People talk about it</h3><p>LIPSS is made to catch attention. From the look of the product to its scents and colours, it's the kind of beauty product people want to try — and then talk about.</p></li>
+      <li><h3>We support our partners</h3><p>Quality content, promotional materials and guidance on how to present LIPSS to your customers, so the brand looks just as good wherever you discover it.</p></li>
+      <li><h3>Our community keeps growing</h3><p>Many customers become collectors, ambassadors and regular followers, waiting for new launches and limited editions.</p></li>
+    </ul>
+  </div>
+
+  <form class="form" id="enquiry" name="b2b-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+    <input type="hidden" name="form-name" value="b2b-enquiry">
+    <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+    <div id="formBody" style="display:grid;gap:22px">
+      <h3>Contact our B2B team</h3>
+      <p class="intro">Whether you're interested in stocking LIPSS, creating something together or simply want to know more, get in touch.</p>
+      <div class="fields">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required placeholder="Your name"><span class="err" aria-live="polite"></span></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization" placeholder="Company or handle"><span class="err"></span></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@company.ae"><span class="err" aria-live="polite"></span></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+971"><span class="err"></span></div>
+        <div class="field field--full"><label for="f-type">Business type</label>
+          <select id="f-type" name="type" required>
+            <option value="">Select one</option>
+            <option>Beauty salon</option><option>Beauty / concept store</option><option>Fashion brand</option><option>Showroom</option><option>Fitness studio</option><option>Café</option><option>Creator / influencer</option><option>Retailer / distributor</option><option>Other</option>
+          </select><span class="err" aria-live="polite"></span></div>
+        <div class="field field--full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Stocking, a collaboration, or just a question"></textarea><span class="err"></span></div>
+      </div>
+      <button class="btn btn--light" type="submit">Contact our B2B team <span class="arr">→</span></button>
+    </div>
+    <div class="form__ok" id="formOk" hidden tabindex="-1">
+      <h3>Thank you.</h3>
+      <p id="okText"></p>
+    </div>
+  </form>
+</section>
+
+<!-- 7 · COMMUNITY + INSTAGRAM -->
+<section class="community wrap" id="community" aria-labelledby="community-h">
+  <div class="community__top">
+    <div style="display:grid;gap:14px">
+      <h2 class="h community__h rv" id="community-h">The LIPSS community</h2>
+      <p class="community__sub">More than customers.</p>
+    </div>
+    <div class="body rv">
+      <p>LIPSS has grown into a community of fans, collectors and ambassadors who share their favourite shades, collect limited editions and introduce LIPSS to their friends. That's why we keep creating new flavours, colours and limited editions.</p>
+    </div>
+  </div>
+  <div class="feed">
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-main-800.webp" srcset="assets/img/com-main-800.webp 800w, assets/img/com-main-1400.webp 1400w" sizes="50vw" width="800" height="1067" style="object-position:50% 35%" alt="Creator on a sun lounger applying a lime Lipper, with strawberry and mango Lippers beside her" loading="lazy"></a>
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-1-800.webp" width="800" height="1067" style="object-position:50% 55%" alt="Creator in a jewelled sheet mask applying a Cherry Lipper" loading="lazy"></a>
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-2-800.webp" width="800" height="1016" style="object-position:50% 30%" alt="Creator in white satin pyjamas holding a lilac Lipper" loading="lazy"></a>
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-3-800.webp" width="800" height="1000" style="object-position:50% 45%" alt="Smiling model in sunlight holding a Butter Croissant Lipper" loading="lazy"></a>
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-4-800.webp" width="800" height="1067" style="object-position:50% 50%" alt="Creator applying a cream Lipper to glossy lips" loading="lazy"></a>
+  </div>
+  <div class="community__foot">
+    <p class="handle">Follow LIPSS · @lipss.uae</p>
+    <a class="btn" href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener">Follow us on Instagram <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- 8 · SOMETHING NEW IS COMING + FINAL CTA -->
+<section class="teaser wrap" id="teaser" aria-labelledby="teaser-h">
+  <div class="teaser__bg" aria-hidden="true"><img src="assets/img/gloss-melt-720.webp" width="720" height="1290" alt="" loading="lazy"></div>
+  <div class="teaser__lit" id="lit" aria-hidden="true"><img src="assets/img/gloss-melt-1400.webp" width="1400" height="2508" alt="" loading="lazy"></div>
+  <div class="teaser__in">
+    <p class="eyebrow" style="color:var(--pink)">Coming soon</p>
+    <h2 class="h" id="teaser-h">Something new is coming<span class="blink">.</span></h2>
+    <div class="body">
+      <p>LIPSS is only getting started. New products, new collaborations, new colours and new places to discover us.</p>
+      <p><strong>And now, the UAE is part of the story.</strong></p>
+    </div>
+    <p class="teaser__sign"><span class="dots pink">Hello, UAE.</span> Beauty that cares.</p>
+    <div class="btns">
+      <a class="btn btn--light" href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener">Follow LIPSS <span class="arr">→</span></a>
+      <a class="btn btn--ghost-light" href="#partners">Become a partner</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot wrap">
+  <div class="foot__logo"><svg class="logo" viewBox="0 0 76 36" role="img" aria-label="LIPSS"><use href="#lipss-logo"/></svg></div>
+  <div class="foot__cols">
+    <div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener">Instagram · @lipss.uae</a></li></ul></div>
+    <div><h4>For partnerships &amp; business enquiries</h4>
+      <ul>
+        <li class="copy-email"><a href="mailto:partners@lipss.care" id="email">partners@lipss.care</a><button type="button" id="copyEmail">Copy</button></li>
+        <li><a href="#enquiry">Enquiry form</a></li>
+      </ul></div>
+    <div><h4>Legal</h4><ul><li><button class="linkish" type="button" data-dlg="privacy">Privacy Policy</button></li><li><button class="linkish" type="button" data-dlg="terms">Terms &amp; Conditions</button></li></ul></div>
+  </div>
+  <div class="foot__base"><span>© <span id="yr">2026</span> LIPSS. All rights reserved.</span><span>Born in Ukraine · Now in the UAE</span></div>
+</footer>
+
+<dialog id="dlg"><div class="dlg"><h3 id="dlgT">Privacy Policy</h3><p>Placeholder. The full text will be added here before launch.</p><form method="dialog"><button class="btn" type="submit">Close</button></form></div></dialog>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+  /* nav + mobile menu */
+  const nav = $('#nav'), burger = $('#burger'), menu = $('#menu');
+  const setMenu = open => {
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.setAttribute('aria-hidden', !open);
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+  };
+  burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  const links = $$('.nav__links a');
+  const spy = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['about','lipper','community','uae','partners'].forEach(id => spy.observe(document.getElementById(id)));
+
+  /* reveal: only elements below the first screen start hidden */
+  if (!reduce && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); }
+    }), { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv').forEach(el => {
+      if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('pre'); io.observe(el); }
+    });
+  }
+
+  /* UAE chapter: warm the background and move the route as you scroll */
+  const journey = $('#uae');
+  const stops = [[252,248,245],[216,198,182],[225,182,165]];
+  const mix = p => {
+    const s = p * (stops.length - 1), i = Math.min(stops.length - 2, Math.floor(s)), t = s - i;
+    return 'rgb(' + stops[i].map((c, k) => Math.round(c + (stops[i + 1][k] - c) * t)).join(',') + ')';
+  };
+  let ticking = false;
+  const frame = () => {
+    ticking = false;
+    nav.classList.toggle('solid', scrollY > 20);
+    const r = journey.getBoundingClientRect(), vh = innerHeight;
+    const p = Math.min(1, Math.max(0, (vh - r.top) / (r.height + vh * .2)));
+    journey.style.setProperty('--p', p.toFixed(3));
+    journey.style.setProperty('--jbg', mix(p));
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+  frame();
+
+  /* dunes behind the UAE chapter */
+  const cv = $('#dunes'), ctx = cv.getContext('2d');
+  let W = 0, H = 0, visible = false, t0 = 0;
+  function sizeDunes() {
+    const dpr = Math.min(2, devicePixelRatio || 1);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drawDunes(t0);
+  }
+  function drawDunes(t) {
+    ctx.clearRect(0, 0, W, H);
+    const n = 24;
+    for (let i = 0; i < n; i++) {
+      const base = H * (.45 + i / n * .6);
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += 8) {
+        const y = base + Math.sin(x * .0042 + i * .5 + t * .00012) * (18 + i * 1.4) + Math.sin(x * .011 - i + t * .0002) * 6;
+        x ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+      }
+      ctx.strokeStyle = `rgba(94,42,43,${.035 + i / n * .07})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  }
+  function loop(t) { if (!visible) return; t0 = t; drawDunes(t); requestAnimationFrame(loop); }
+  new IntersectionObserver(es => { visible = es[0].isIntersecting; if (visible && !reduce) requestAnimationFrame(loop); }).observe(journey);
+  addEventListener('resize', sizeDunes);
+  sizeDunes();
+
+  /* teaser spotlight: follows the mouse, drifts on its own otherwise */
+  const teaser = $('#teaser'), lit = $('#lit');
+  let follow = false;
+  teaser.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    follow = true;
+    const r = teaser.getBoundingClientRect();
+    lit.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    lit.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+  teaser.addEventListener('pointerleave', () => { follow = false; });
+  if (!reduce) {
+    let tv = false;
+    const drift = t => {
+      if (!tv) return;
+      if (!follow) {
+        lit.style.setProperty('--mx', (50 + Math.sin(t / 2200) * 30) + '%');
+        lit.style.setProperty('--my', (50 + Math.cos(t / 3100) * 25) + '%');
+      }
+      requestAnimationFrame(drift);
+    };
+    new IntersectionObserver(es => { tv = es[0].isIntersecting; if (tv) requestAnimationFrame(drift); }).observe(teaser);
+  }
+
+  /* enquiry form (front end only: set ENDPOINT to your inbox or CRM) */
+  const ENDPOINT = '/';
+  const form = $('#enquiry');
+  const need = { 'f-name': v => v.trim() ? '' : 'Please add your name.',
+                 'f-email': v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please add a valid email, like name@company.ae.',
+                 'f-type': v => v ? '' : 'Please choose a business type.' };
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    let first = null;
+    Object.entries(need).forEach(([id, check]) => {
+      const el = document.getElementById(id), msg = check(el.value), f = el.closest('.field');
+      f.classList.toggle('bad', !!msg); f.querySelector('.err').textContent = msg;
+      if (msg && !first) first = el;
+    });
+    if (first) { first.focus(); return; }
+    const data = Object.fromEntries(new FormData(form));
+    let sent = false;
+    if (ENDPOINT) { try { const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() }); sent = res.ok; } catch (_) {} }
+    $('#formBody').hidden = true;
+    $('#okText').textContent = sent
+      ? `Thanks, ${data.name}. Our team will reply to ${data.email}.`
+      : `Sorry, ${data.name}, your enquiry didn't go through. Please email us at ${$('#email').textContent} instead.`;
+    $('#formOk').hidden = false; $('#formOk').focus();
+  });
+
+  $('#copyEmail').addEventListener('click', e => {
+    const t = $('#email').textContent, b = e.currentTarget;
+    navigator.clipboard?.writeText(t).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1600); })
+      .catch(() => { const r = document.createRange(); r.selectNodeContents($('#email')); getSelection().removeAllRanges(); getSelection().addRange(r); });
+  });
+  const dlg = $('#dlg');
+  $$('[data-dlg]').forEach(b => b.addEventListener('click', () => {
+    $('#dlgT').textContent = b.dataset.dlg === 'privacy' ? 'Privacy Policy' : 'Terms & Conditions';
+    dlg.showModal();
+  }));
+  $('#yr').textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
