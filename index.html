@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:title" content="LIPSS UAE — A new era of lip care">
-<meta property="og:description" content="Born in Ukraine in 2024, LIPSS is a modern lip care brand where beauty meets care. Now in the UAE.">
+<meta property="og:description" content="Not just a lip gloss, not just a lip balm. It's a Lipper. LIPSS lip care, now in the UAE.">
 <meta property="og:image" content="assets/img/cherry-model-1400.webp">
-<meta name="theme-color" content="#5E2A2B">
+<meta name="theme-color" content="#EBA2B1">
 <title>LIPSS UAE</title>
-<meta name="description" content="LIPSS — a new era of lip care. Born in Ukraine in 2024, now in the UAE. Meet the Lipper.">
+<meta name="description" content="LIPSS — a new era of lip care. Not just a lip gloss, not just a lip balm: it's a Lipper. Now in the UAE.">
 <link rel="preload" href="assets/fonts/Rubik.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* Layout: a short editorial campaign scroll, eight beats. Cream pages alternate with cocoa and pink spreads.
+/* Layout: a short editorial campaign scroll. White pages alternate with pink and blush spreads; cocoa is kept for type.
    Rubik is the primary face for everything; Array (dotted) appears only as a brand accent on a few short words.
    Single-theme on purpose: this is the LIPSS brand world, so colours are fixed regardless of host theme. */
 @font-face{font-family:"Array";src:url(assets/fonts/Array-BoldWide.woff2) format("woff2");font-weight:800;font-display:swap}
@@ -20,8 +20,9 @@
 :root{
   color-scheme:light;
   /* LIPSS brand guide */
-  --cream:#FCF8F5;
-  --sand:#D8C6B6;
+  --cream:#FFFFFF;
+  --sand:#F9E3E8;
+  --blush:#FBEDF0;
   --nude:#E1B6A5;
   --cocoa:#5E2A2B;
   --pink:#EBA2B1;
@@ -29,7 +30,8 @@
   --night:#2B1213;
   --cocoa-60:rgba(94,42,43,.62);
   --cocoa-15:rgba(94,42,43,.15);
-  --cream-70:rgba(252,248,245,.72);
+  --cream-70:rgba(255,255,255,.75);
+  --rose:#B23A57;
   --cream-20:rgba(252,248,245,.2);
 
   --sans:"Rubik",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -38,13 +40,13 @@
   --step-0:clamp(1rem,.96rem + .2vw,1.125rem);
   --step-1:clamp(1.15rem,1.05rem + .5vw,1.45rem);
   --step-2:clamp(1.45rem,1.2rem + 1.2vw,2.2rem);
-  --step-3:clamp(2.2rem,1.4rem + 3.4vw,4.4rem);
-  --step-4:clamp(2.6rem,1.3rem + 6vw,7.5rem);
+  --step-3:clamp(1.8rem,1.25rem + 2.4vw,3.4rem);
+  --step-4:clamp(2.1rem,1.2rem + 4.2vw,5.4rem);
 
   --gutter:max(18px,4vw);
   --space:clamp(64px,8vw,120px);
   --ease:cubic-bezier(.2,.7,.1,1);
-  --nav-h:64px;
+  --nav-h:76px;
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -92,8 +94,9 @@ a{color:inherit}
 
 /* ---------- NAV ---------- */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background .4s,box-shadow .4s}
-.nav.solid{background:rgba(252,248,245,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--cocoa-15)}
-.nav__logo{color:var(--cocoa);width:84px;height:40px;display:block}
+.nav.solid{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--cocoa-15)}
+.nav__logo{color:var(--cocoa);width:116px;height:55px;display:block}
+@media (min-width:1024px){.nav__logo{width:140px;height:66px}}
 .nav__logo svg{width:100%;height:100%}
 .nav__links{display:none;gap:clamp(1rem,2.4vw,2.4rem);list-style:none;margin:0;padding:0}
 .nav__links a{font:500 .76rem/1 var(--sans);letter-spacing:.16em;text-decoration:none;position:relative;padding:.4em 0}
@@ -104,13 +107,13 @@ a{color:inherit}
 .nav__burger i{display:block;width:24px;height:1.5px;background:currentColor;box-shadow:0 -7px 0 currentColor,0 7px 0 currentColor;transition:.3s}
 .menu-open .nav__burger i{box-shadow:none;transform:rotate(45deg)}
 .menu-open .nav__burger i::after{content:"";display:block;width:24px;height:1.5px;background:currentColor;transform:rotate(-90deg)}
-.menu{position:fixed;inset:0;z-index:45;background:var(--cocoa);color:var(--cream);padding-top:calc(var(--nav-h) + 4vh + env(safe-area-inset-top,0px));padding-bottom:max(28px,env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;justify-content:space-between;clip-path:circle(0 at calc(100% - 40px) 32px);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu{position:fixed;inset:0;z-index:45;background:var(--pink);color:var(--cocoa);padding-top:calc(var(--nav-h) + 4vh + env(safe-area-inset-top,0px));padding-bottom:max(28px,env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;justify-content:space-between;clip-path:circle(0 at calc(100% - 40px) 32px);transition:clip-path .7s var(--ease);visibility:hidden}
 .menu-open .menu{clip-path:circle(150% at calc(100% - 40px) 32px);visibility:visible}
 .menu-open .nav{background:transparent;box-shadow:none;backdrop-filter:none}
-.menu-open .nav__logo,.menu-open .nav__burger{color:var(--cream)}
+.menu-open .nav__logo,.menu-open .nav__burger{color:var(--cocoa)}
 .menu ul{list-style:none;margin:0;padding:0;display:grid;gap:.15em}
-.menu ul a{font-weight:800;letter-spacing:-.03em;font-size:clamp(2.2rem,11vw,4rem);line-height:1.05;text-decoration:none;text-transform:uppercase}
-.menu ul a:hover{color:var(--pink)}
+.menu ul a{font-weight:800;letter-spacing:-.03em;font-size:clamp(1.8rem,9vw,3.4rem);line-height:1.05;text-decoration:none;text-transform:uppercase}
+.menu ul a:hover{color:var(--cream)}
 .menu__foot{display:flex;flex-direction:column;gap:18px}
 @media (min-width:1024px){
   .nav__links,.nav__cta{display:flex}
@@ -121,7 +124,7 @@ a{color:inherit}
 /* ---------- 1 HERO ---------- */
 .hero{padding-top:clamp(12px,3vw,36px);padding-bottom:clamp(36px,5vw,72px);display:grid;gap:22px}
 .hero__eyebrow{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.hero__h{font-size:clamp(2.2rem,11.5vw,10rem);position:relative;z-index:3}
+.hero__h{font-size:clamp(2rem,10vw,8rem);position:relative;z-index:3}
 .hero__h .ln{display:block;overflow:hidden;padding-block:.03em}
 .hero__h .ln>span{display:block;animation:rise 1.2s var(--ease) both}
 .hero__h .ln:nth-child(2)>span{animation-delay:.12s}
@@ -135,10 +138,13 @@ a{color:inherit}
 .hero__tag{position:absolute;left:12px;top:12px;z-index:4;background:var(--cream);padding:.5em .8em;font:500 .66rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
 .hero__copy{display:grid;gap:22px;max-width:30rem}
 .hero__copy p{margin:0;font-size:var(--step-1);font-weight:300;line-height:1.4}
+.hook{font-size:var(--step-2)!important;line-height:1.2!important;letter-spacing:-.015em}
+.hook strong{display:block;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:.25em}
+.hook em{font-style:normal;font-weight:600;background:var(--pink);padding:0 .25em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 @media (min-width:1024px){
   .hero{grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:0;align-items:start}
   .hero__eyebrow{grid-column:1/-1;margin-bottom:2vw}
-  .hero__h{grid-column:1/10;grid-row:2;font-size:clamp(4rem,8.4vw,10.5rem);margin-top:1vw}
+  .hero__h{grid-column:1/10;grid-row:2;font-size:clamp(3.4rem,6.6vw,8.2rem);margin-top:1vw}
   .hero__media{grid-column:8/13;grid-row:2/4;margin-bottom:0}
   .hero__copy{grid-column:1/6;grid-row:3;align-self:end;padding-bottom:2vw}
   .hero__float{width:42%;left:-30%;right:auto;bottom:6%}
@@ -163,20 +169,19 @@ a{color:inherit}
 @media (min-width:860px){.about__grid{grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,80px);align-items:center}}
 
 /* ---------- 3 LIPPER + INSIDE ---------- */
-.lipper{background:var(--cocoa);color:var(--cream);padding-block:var(--space)}
-.lipper .eyebrow{color:var(--cream)}
-.lipper__big{font-size:clamp(3rem,12vw,11rem);color:var(--cream);margin:.2em 0 .45em}
+.lipper{background:var(--pink);color:var(--cocoa);padding-block:var(--space)}
+.lipper__big{font-size:clamp(2.4rem,9vw,7.5rem);color:var(--cream);margin:.2em 0 .45em}
 .lipper__stage{display:grid;gap:32px}
 .lipper__hero{aspect-ratio:4/5}
 .lipper__copy{display:grid;gap:24px;align-content:start}
-.lipper__copy .body{color:var(--cream)}
+
 .inside{margin-top:clamp(48px,6vw,90px);display:grid;gap:28px}
 .inside__row{display:grid;gap:28px}
-.ing{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;border-top:1px solid var(--cream-20);padding-top:18px}
+.ing{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;border-top:1px solid var(--cocoa-15);padding-top:18px}
 .ing .frame{aspect-ratio:1}
 .ing h3{font-weight:800;font-size:var(--step-1);letter-spacing:-.01em;text-transform:uppercase;margin:0 0 2px;line-height:1.1}
-.ing small{display:block;font:500 .66rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--cream);opacity:.8;margin-bottom:8px}
-.ing p{margin:0;color:var(--cream);font-size:.95rem;line-height:1.5}
+.ing small{display:block;font:500 .66rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;opacity:.75;margin-bottom:8px}
+.ing p{margin:0;font-size:.95rem;line-height:1.5}
 @media (min-width:900px){
   .lipper__stage{grid-template-columns:6fr 5fr;gap:clamp(40px,6vw,100px);align-items:center}
   .inside__row{grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px)}
@@ -185,7 +190,7 @@ a{color:inherit}
 }
 
 /* ---------- 4 DETAIL ---------- */
-.detail{background:var(--sand);padding-block:var(--space)}
+.detail{background:var(--blush);padding-block:var(--space)}
 .detail__head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px)}
 .detail__h{font-size:var(--step-3);max-width:13ch}
 .strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1 * max(var(--gutter),env(safe-area-inset-left,0px)));padding-inline:max(var(--gutter),env(safe-area-inset-left,0px))}
@@ -202,37 +207,40 @@ a{color:inherit}
 }
 
 /* ---------- 5 UAE ---------- */
-.journey{position:relative;overflow:hidden;background:var(--jbg,var(--cream));padding-block:var(--space);isolation:isolate}
-.journey canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
-.journey__h{font-size:var(--step-4);max-width:11ch}
-.route{margin-block:clamp(32px,5vw,64px);display:grid;gap:12px}
-.route__ends{display:flex;justify-content:space-between;gap:12px;font:500 .72rem/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase}
-.route__ends div:last-child{text-align:right}
-.route__ends strong{display:block;font-weight:800;font-size:clamp(1.4rem,4vw,2.6rem);letter-spacing:-.02em;line-height:1}
-.route__line{position:relative;height:14px}
-.route__line::before,.route__line i{content:"";position:absolute;inset:0;background:radial-gradient(circle,currentColor 2.6px,transparent 3.1px) 0 50%/14px 14px repeat-x}
-.route__line::before{opacity:.2}
-.route__line i{clip-path:inset(0 calc((1 - var(--p,0)) * 100%) 0 0)}
-.route__line b{position:absolute;top:50%;left:calc(var(--p,0) * 100%);width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 6px rgba(235,162,177,.35)}
-.route__km{font:500 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-align:center}
+.journey{padding-block:var(--space)}
 .journey__grid{display:grid;gap:40px}
 .journey__copy{display:grid;gap:22px;align-content:start;justify-items:start}
 .journey__copy .lede{font-size:var(--step-1);line-height:1.4;max-width:26em}
-.hello{font-size:clamp(2rem,12.5vw,6rem);line-height:1;margin:0;font-weight:900;white-space:nowrap}
-@media (min-width:900px){.hello{font-size:clamp(3rem,6.8vw,7.5rem)}}
-.hello__tag{display:inline-block;background:var(--cocoa);color:var(--cream);padding:.02em .18em .06em;border-radius:.14em;transform:rotate(-3deg);margin-left:.05em}
+.hello{font-size:clamp(2rem,11vw,5rem);line-height:1;margin:0;font-weight:900;white-space:nowrap}
+@media (min-width:900px){.hello{font-size:clamp(2.6rem,5.4vw,6rem)}}
+.hello__tag{display:inline-block;background:var(--pink);color:var(--cocoa);padding:.02em .18em .06em;margin-left:.05em}
 .who{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.who li{border:1px solid var(--cocoa);border-radius:999px;padding:.55em 1em;font:500 .74rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
-.live{display:inline-flex;align-items:center;gap:.7em;font:500 .72rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase}
-.live::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pink);animation:pulse 1.8s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(235,162,177,.7)}50%{box-shadow:0 0 0 8px rgba(235,162,177,0)}}
-.arch__wrap{position:relative;max-width:520px;width:100%;justify-self:center}
-.arch{aspect-ratio:1/1;border-radius:999px 999px 0 0}
-.sun{position:absolute;width:58%;aspect-ratio:1;border-radius:50%;right:-14%;top:calc(-6% + (1 - var(--p,0)) * 30%);background:radial-gradient(circle at 40% 40%,#F6D2B8,var(--nude) 55%,var(--pink));opacity:.9;z-index:-1}
+.who li{border:1px solid var(--cocoa-15);border-radius:999px;padding:.55em 1em;font:500 .74rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.uae__img{aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
 @media (min-width:900px){
   .journey__grid{grid-template-columns:6fr 5fr;align-items:center;gap:6vw}
-  .arch__wrap{justify-self:end;margin-right:3vw}
+  .uae__img{justify-self:end}
 }
+
+/* ---------- SHOP ---------- */
+.shop{padding-block:var(--space);display:grid;gap:clamp(28px,4vw,48px)}
+.shop__top{display:grid;gap:16px}
+.shop__h{font-size:var(--step-3)}
+.shop__top .lede{font-size:var(--step-1);line-height:1.4;max-width:30em}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
+.card{display:grid;gap:10px;align-content:start}
+.card .frame{aspect-ratio:4/5;background:var(--blush)}
+.card .frame img{transition:transform 1s var(--ease)}
+.card:hover .frame img{transform:scale(1.05)}
+.card h3{margin:0;font-weight:800;font-size:clamp(.95rem,.85rem + .5vw,1.2rem);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
+.card p{margin:0;font-size:.85rem;color:var(--cocoa-60);line-height:1.4}
+.price{font-weight:600;font-size:1rem}
+.price.tbc{color:var(--cocoa-60);font-weight:500;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+.card .btn{min-height:44px;padding:.75em 1em;font-size:.68rem;letter-spacing:.12em;width:100%}
+.shop__foot{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;border-top:1px solid var(--cocoa-15);padding-top:22px}
+.shop__foot p{margin:0;font-size:.95rem}
+.shop__foot a{font-weight:600}
+@media (min-width:900px){.cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 20px}.shop__top{grid-template-columns:1fr 1fr;align-items:end;column-gap:6vw}}
 
 /* ---------- 6 PARTNERS (+ why) ---------- */
 .partners{padding-block:var(--space);display:grid;gap:48px}
@@ -245,23 +253,23 @@ a{color:inherit}
 .why li{padding:18px 0;border-bottom:1px solid var(--cocoa-15);display:grid;gap:6px}
 .why h3{margin:0;font-weight:800;font-size:var(--step-1);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
 .why p{margin:0;font-size:.95rem;color:var(--cocoa-60);max-width:34em}
-.form{background:var(--cocoa);color:var(--cream);padding:clamp(24px,4vw,52px);display:grid;gap:22px;align-content:start;scroll-margin-top:calc(var(--nav-h) + 16px)}
+.form{background:var(--blush);color:var(--cocoa);padding:clamp(24px,4vw,52px);display:grid;gap:22px;align-content:start;scroll-margin-top:calc(var(--nav-h) + 16px)}
 .form h3{font-weight:800;font-size:var(--step-2);text-transform:uppercase;letter-spacing:-.02em;margin:0;line-height:1}
-.form .intro{margin:0;color:var(--cream-70);font-size:.95rem}
+.form .intro{margin:0;color:var(--cocoa-60);font-size:.95rem}
 .fields{display:grid;gap:18px 20px}
 .field{display:grid;gap:6px;min-width:0}
-.field label{font:500 .68rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--pink)}
-.field input,.field select,.field textarea{width:100%;font:400 1rem/1.4 var(--sans);color:var(--cream);background:transparent;border:0;border-bottom:1px solid rgba(252,248,245,.35);border-radius:0;padding:10px 0;transition:border-color .3s}
-.field select{appearance:none;background:linear-gradient(45deg,transparent 50%,var(--cream) 50%) calc(100% - 10px) 55%/6px 6px no-repeat,linear-gradient(-45deg,transparent 50%,var(--cream) 50%) calc(100% - 4px) 55%/6px 6px no-repeat}
+.field label{font:500 .68rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--cocoa)}
+.field input,.field select,.field textarea{width:100%;font:400 1rem/1.4 var(--sans);color:var(--cocoa);background:transparent;border:0;border-bottom:1px solid rgba(94,42,43,.3);border-radius:0;padding:10px 0;transition:border-color .3s}
+.field select{appearance:none;background:linear-gradient(45deg,transparent 50%,var(--cocoa) 50%) calc(100% - 10px) 55%/6px 6px no-repeat,linear-gradient(-45deg,transparent 50%,var(--cocoa) 50%) calc(100% - 4px) 55%/6px 6px no-repeat}
 .field select option{color:var(--cocoa);background:var(--cream)}
 .field textarea{resize:vertical;min-height:100px}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pink)}
-.field input::placeholder,.field textarea::placeholder{color:rgba(252,248,245,.4)}
-.field .err{font-size:.78rem;color:var(--pink)}
-.field.bad input,.field.bad select{border-color:var(--pink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cocoa)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(94,42,43,.4)}
+.field .err{font-size:.78rem;color:var(--rose)}
+.field.bad input,.field.bad select{border-color:var(--rose)}
 .form .btn{justify-self:start}
 .form__ok{display:grid;gap:14px}
-.form__ok p{margin:0;color:var(--cream-70)}
+.form__ok p{margin:0;color:var(--cocoa-60)}
 @media (min-width:640px){.fields{grid-template-columns:1fr 1fr}.field--full{grid-column:1/-1}}
 @media (min-width:1000px){.partners{grid-template-columns:6fr 5fr;gap:6vw;align-items:start}.form{position:sticky;top:calc(var(--nav-h) + 20px)}}
 
@@ -293,7 +301,7 @@ a{color:inherit}
 .teaser__bg{filter:blur(26px) brightness(.38) saturate(1.2);transform:scale(1.15)}
 .teaser__lit{z-index:-1;--mx:70%;--my:50%;-webkit-mask-image:radial-gradient(circle at var(--mx) var(--my),#000 0,#000 90px,transparent 230px);mask-image:radial-gradient(circle at var(--mx) var(--my),#000 0,#000 90px,transparent 230px);filter:brightness(.85)}
 .teaser__in{display:grid;gap:24px;max-width:60rem}
-.teaser .h{font-size:clamp(2.6rem,9vw,8rem)}
+.teaser .h{font-size:clamp(2.2rem,7vw,6rem)}
 .teaser .h .blink{color:var(--pink);animation:blink 2.4s steps(1) infinite}
 @keyframes blink{50%{opacity:.25}}
 .teaser .body{color:var(--cream-70);font-size:var(--step-1);font-weight:300;line-height:1.45}
@@ -302,19 +310,19 @@ a{color:inherit}
 .btn--ghost-light{--bg:transparent;--fg:var(--cream);border-color:var(--cream)}
 
 /* ---------- FOOTER ---------- */
-.foot{background:var(--cocoa);color:var(--cream);padding-block:clamp(48px,6vw,80px) max(28px,env(safe-area-inset-bottom,0px));display:grid;gap:40px}
-.foot__logo{color:var(--cream);width:min(150px,40%)}
+.foot{background:var(--pink);color:var(--cocoa);padding-block:clamp(48px,6vw,80px) max(28px,env(safe-area-inset-bottom,0px));display:grid;gap:40px}
+.foot__logo{color:var(--cocoa);width:min(150px,40%)}
 .foot__logo svg{width:100%;height:auto;aspect-ratio:76/36}
 .foot__cols{display:grid;gap:28px}
-.foot h4{font:500 .68rem/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin:0 0 10px}
+.foot h4{font:600 .68rem/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;margin:0 0 10px}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .foot a{text-decoration:none;opacity:.85}
-.foot a:hover{opacity:1;color:var(--pink)}
+.foot a:hover{opacity:1;color:var(--cream)}
 .foot button.linkish{background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;opacity:.85;text-align:left}
-.foot button.linkish:hover{color:var(--pink);opacity:1}
-.foot__base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.78rem;color:var(--cream-70);border-top:1px solid var(--cream-20);padding-top:20px}
+.foot button.linkish:hover{color:var(--cream);opacity:1}
+.foot__base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.78rem;color:var(--cocoa-60);border-top:1px solid var(--cocoa-15);padding-top:20px}
 .copy-email{display:inline-flex;gap:10px;align-items:center;flex-wrap:wrap}
-.copy-email button{background:none;border:1px solid rgba(252,248,245,.4);color:var(--cream);border-radius:999px;font:500 .62rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:.55em .9em;cursor:pointer}
+.copy-email button{background:none;border:1px solid var(--cocoa-60);color:var(--cocoa);border-radius:999px;font:500 .62rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:.55em .9em;cursor:pointer}
 @media (min-width:800px){.foot{grid-template-columns:1fr 2fr;align-items:start}.foot__cols{grid-template-columns:repeat(3,1fr)}.foot__base{grid-column:1/-1}}
 
 dialog{border:0;padding:0;max-width:min(560px,calc(100vw - 32px));background:var(--cream);color:var(--cocoa)}
@@ -341,12 +349,13 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
     <ul class="nav__links">
       <li><a href="#about">ABOUT</a></li>
       <li><a href="#lipper">THE LIPPER</a></li>
-      <li><a href="#community">THE COMMUNITY</a></li>
+      <li><a href="#shop">SHOP</a></li>
       <li><a href="#uae">UAE</a></li>
+      <li><a href="#community">COMMUNITY</a></li>
       <li><a href="#partners">PARTNERS</a></li>
     </ul>
   </nav>
-  <div class="nav__cta"><a class="btn" href="#enquiry">Contact us</a></div>
+  <div class="nav__cta"><a class="btn" href="#shop">Shop now</a></div>
   <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i></button>
 </header>
 
@@ -354,12 +363,13 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#lipper">The Lipper</a></li>
-    <li><a href="#community">Community</a></li>
+    <li><a href="#shop">Shop</a></li>
     <li><a href="#uae">UAE</a></li>
+    <li><a href="#community">Community</a></li>
     <li><a href="#partners">Partners</a></li>
   </ul>
   <div class="menu__foot">
-    <a class="btn btn--light" href="#enquiry">Contact us <span class="arr">→</span></a>
+    <a class="btn" href="#shop">Shop now <span class="arr">→</span></a>
     <span class="eyebrow">@lipss.uae · A new era of lip care</span>
   </div>
 </div>
@@ -369,7 +379,7 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
 <!-- 1 · HERO -->
 <section class="hero wrap" aria-labelledby="hero-h">
   <div class="hero__eyebrow">
-    <p class="eyebrow">LIPSS · Est. 2024</p>
+    <p class="eyebrow">Beauty that cares</p>
     <p class="eyebrow">Now in the UAE</p>
   </div>
   <h1 class="h hero__h" id="hero-h">
@@ -383,16 +393,16 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
     <span class="hero__tag">The Lipper · Cherry</span>
   </div>
   <div class="hero__copy">
-    <p>Born in 2024, LIPSS is a modern lip care brand where beauty meets care.</p>
+    <p class="hook"><strong>Meet LIPSS.</strong>Not just a lip gloss. Not just a lip balm. <em>It's a Lipper.</em></p>
     <div class="btns">
-      <a class="btn" href="#about">Discover LIPSS</a>
-      <a class="btn btn--ghost" href="#lipper">Meet the Lipper <span class="arr">→</span></a>
+      <a class="btn" href="#shop">Shop the Lipper <span class="arr">→</span></a>
+      <a class="btn btn--ghost" href="#lipper">Discover</a>
     </div>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
-  <div class="marquee__t"><span>Beauty that cares</span><b>●</b><span>Ceramides</span><b>●</b><span>Peptides</span><b>●</b><span>Vitamin E</span><b>●</b><span>From Ukraine to the UAE</span><b>●</b></div><div class="marquee__t"><span>Beauty that cares</span><b>●</b><span>Ceramides</span><b>●</b><span>Peptides</span><b>●</b><span>Vitamin E</span><b>●</b><span>From Ukraine to the UAE</span><b>●</b></div>
+  <div class="marquee__t"><span>Beauty that cares</span><b>●</b><span>Ceramides</span><b>●</b><span>Peptides</span><b>●</b><span>Vitamin E</span><b>●</b><span>Now in the UAE</span><b>●</b></div><div class="marquee__t"><span>Beauty that cares</span><b>●</b><span>Ceramides</span><b>●</b><span>Peptides</span><b>●</b><span>Vitamin E</span><b>●</b><span>Now in the UAE</span><b>●</b></div>
 </div>
 
 <!-- 2 · ABOUT -->
@@ -403,8 +413,8 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
       <img src="assets/img/butter-800.webp" srcset="assets/img/butter-800.webp 800w, assets/img/butter-1600.webp 1600w" sizes="(min-width:860px) 55vw, 92vw" width="800" height="356" alt="A block of balm-textured butter carved with the LIPSS logo" loading="lazy">
     </div>
     <div class="body rv">
-      <p class="about__statement">Born in 2024, LIPSS is a modern lip care brand where <em>beauty</em> meets <em>care</em>.</p>
-      <p>Our signature product is the Lipper — a lip gloss that has become a favourite among tens of thousands of girls across Ukraine and Europe.</p>
+      <p class="about__statement">LIPSS is a modern lip care brand where <em>beauty</em> meets <em>care</em>.</p>
+      <p>Our signature product is the Lipper — a lip gloss that has become a favourite among tens of thousands of girls around the world.</p>
       <p>We created LIPSS because we wanted lip care to be something you actually look forward to using. Something with a great texture, a good scent, beautiful colours and a formula that takes care of your lips.</p>
       <p class="about__sign">LIPSS — beauty that cares.</p>
     </div>
@@ -446,6 +456,79 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
   </div>
 </section>
 
+<!-- SHOP · CATALOGUE -->
+<section class="shop wrap" id="shop" aria-labelledby="shop-h">
+  <div class="shop__top">
+    <div style="display:grid;gap:14px">
+      <p class="eyebrow">Shop</p>
+      <h2 class="h shop__h rv" id="shop-h">Find your Lipper</h2>
+    </div>
+    <p class="lede rv">Pick your flavour and order in one message. We reply quickly and deliver across the UAE.</p>
+  </div>
+  <div class="cards">
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cherry-eye-720.webp" width="720" height="1080" style="object-position:50% 40%" alt="Model holding a red Cherry Lipper and a pair of cherries over one eye" loading="lazy"></div>
+      <h3>Cherry</h3>
+      <p>Juicy cherry shine with a sweet berry scent.</p>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Cherry">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/croissant-720.webp" width="720" height="900" style="object-position:50% 50%" alt="Butter Croissant Lipper resting on croissants in a lace-lined bowl" loading="lazy"></div>
+      <h3>Butter Croissant</h3>
+      <p>Soft cream shine that smells like fresh pastry.</p>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Butter Croissant">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/dubai-chocolate-429.webp" width="429" height="536" style="object-position:50% 50%" alt="Dubai Chocolate Lipper held up to glossy lips" loading="lazy"></div>
+      <h3>Dubai Chocolate</h3>
+      <p>Rich chocolate tint with a pistachio twist.</p>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Dubai Chocolate">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/lipper-money-720.webp" width="720" height="900" style="object-position:50% 50%" alt="Dark green Smells Like Money Lipper standing in front of dollar bills" loading="lazy"></div>
+      <h3>Smells Like Money</h3>
+      <p>A clear, high-shine gloss for every day.</p>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Smells Like Money">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/det-scent-900.webp" width="900" height="1350" style="object-position:50% 55%" alt="Two Salted Caramel Lippers among caramel cubes" loading="lazy"></div>
+      <h3>Salted Caramel</h3>
+      <p>Warm caramel scent with a creamy nude shine.</p>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Salted Caramel">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/det-colour-900.webp" width="900" height="1353" style="object-position:50% 30%" alt="Model holding a Pomegranate Lipper over one eye" loading="lazy"></div>
+      <h3>Pomegranate</h3>
+      <p>Deep red colour with a glassy finish.</p>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Pomegranate">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/leopard-gloss-720.webp" width="720" height="900" style="object-position:50% 50%" alt="Two leopard-print Alter Ego Lippers in a pool of red gloss" loading="lazy"></div>
+      <h3>Alter Ego</h3>
+      <p>Red shimmer in our leopard-print tube.</p>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Alter Ego">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/three-tubes-800.webp" width="800" height="450" style="object-position:70% 50%" alt="Model holding mango, strawberry and lime Lippers" loading="lazy"></div>
+      <h3>Tropical trio</h3>
+      <p>Mango, strawberry and lime, in a set of three.</p>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Tropical trio">Order now</a>
+    </article>
+  </div>
+  <div class="shop__foot">
+    <p>Prefer Instagram? <a href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener">Order in Direct →</a></p>
+    <p class="eyebrow">LIPSS stores in the UAE · coming soon</p>
+  </div>
+</section>
+
 <!-- 4 · ATTENTION TO DETAIL -->
 <section class="detail wrap" aria-labelledby="detail-h">
   <div class="detail__head">
@@ -461,34 +544,44 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
   <p class="detail__foot rv">Every LIPSS formula is developed with our team of technologists and designers, with a focus on both the product and the experience of using it.</p>
 </section>
 
-<!-- 5 · FROM UKRAINE TO THE UAE + LIPSS IN THE UAE -->
+<!-- 5 · HELLO, UAE -->
 <section class="journey wrap" id="uae" aria-labelledby="journey-h">
-  <canvas id="dunes" aria-hidden="true"></canvas>
-  <p class="eyebrow">The next chapter</p>
-  <h2 class="h journey__h rv" id="journey-h">From Ukraine to the UAE</h2>
-  <div class="route" aria-label="Kyiv to Dubai, about 3,500 kilometres">
-    <div class="route__ends">
-      <div><strong>Kyiv</strong>50.45° N · 30.52° E</div>
-      <div><strong>Dubai</strong>25.20° N · 55.27° E</div>
-    </div>
-    <div class="route__line"><i></i><b></b></div>
-    <div class="route__km">≈ 3,500 km</div>
-  </div>
   <div class="journey__grid">
     <div class="journey__copy">
-      <p class="lede rv">LIPSS was born in Ukraine and has grown across Ukraine and Europe. Now we're bringing the brand to the UAE. A new market, a new community and plenty of new LIPSS moments to come.</p>
-      <p class="h hello rv">Hello, <span class="hello__tag">UAE.</span></p>
-      <span class="live">LIPSS in the UAE · now building</span>
+      <p class="eyebrow">The next chapter</p>
+      <h2 class="h hello rv" id="journey-h">Hello, <span class="hello__tag">UAE.</span></h2>
+      <p class="lede rv">LIPSS has grown a community of fans around the world. Now we're bringing the brand to the UAE: a new market, a new community and plenty of new LIPSS moments to come.</p>
       <div class="body rv">
         <p>We are looking to build a community around LIPSS in the UAE — from beauty lovers and creators to retailers and local businesses. If you like what we're doing, we'd love to hear from you.</p>
       </div>
       <ul class="who" aria-label="Who we want to meet"><li>Beauty lovers</li><li>Creators</li><li>Retailers</li><li>Local businesses</li></ul>
       <div class="btns"><a class="btn" href="#enquiry">Get in touch <span class="arr">→</span></a></div>
     </div>
-    <div class="arch__wrap">
-      <div class="sun" aria-hidden="true"></div>
-      <div class="frame arch rv sheen"><img src="assets/img/hello-uae-900.webp" srcset="assets/img/hello-uae-900.webp 900w, assets/img/hello-uae-1600.webp 1600w" sizes="(min-width:900px) 40vw, 92vw" width="900" height="599" style="object-position:50% 50%" alt="Model holding three colourful Lippers: mango, strawberry and lime" loading="lazy"></div>
+    <div class="frame uae__img rv"><img src="assets/img/hello-uae-900.webp" srcset="assets/img/hello-uae-900.webp 900w, assets/img/hello-uae-1600.webp 1600w" sizes="(min-width:900px) 40vw, 92vw" width="900" height="599" style="object-position:50% 50%" alt="Model holding three colourful Lippers: mango, strawberry and lime" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- 7 · COMMUNITY + INSTAGRAM -->
+<section class="community wrap" id="community" aria-labelledby="community-h">
+  <div class="community__top">
+    <div style="display:grid;gap:14px">
+      <h2 class="h community__h rv" id="community-h">The LIPSS community</h2>
+      <p class="community__sub">More than customers.</p>
     </div>
+    <div class="body rv">
+      <p>LIPSS has grown into a community of fans, collectors and ambassadors who share their favourite shades, collect limited editions and introduce LIPSS to their friends. That's why we keep creating new flavours, colours and limited editions.</p>
+    </div>
+  </div>
+  <div class="feed">
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-main-800.webp" srcset="assets/img/com-main-800.webp 800w, assets/img/com-main-1400.webp 1400w" sizes="50vw" width="800" height="1067" style="object-position:50% 35%" alt="Creator on a sun lounger applying a lime Lipper, with strawberry and mango Lippers beside her" loading="lazy"></a>
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-1-800.webp" width="800" height="1067" style="object-position:50% 55%" alt="Creator in a jewelled sheet mask applying a Cherry Lipper" loading="lazy"></a>
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-2-800.webp" width="800" height="1016" style="object-position:50% 30%" alt="Creator in white satin pyjamas holding a lilac Lipper" loading="lazy"></a>
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-3-800.webp" width="800" height="1000" style="object-position:50% 45%" alt="Smiling model in sunlight holding a Butter Croissant Lipper" loading="lazy"></a>
+    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-4-800.webp" width="800" height="1067" style="object-position:50% 50%" alt="Creator applying a cream Lipper to glossy lips" loading="lazy"></a>
+  </div>
+  <div class="community__foot">
+    <p class="handle">Follow LIPSS · @lipss.uae</p>
+    <a class="btn" href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener">Follow us on Instagram <span class="arr">→</span></a>
   </div>
 </section>
 
@@ -526,37 +619,13 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
           </select><span class="err" aria-live="polite"></span></div>
         <div class="field field--full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Stocking, a collaboration, or just a question"></textarea><span class="err"></span></div>
       </div>
-      <button class="btn btn--light" type="submit">Contact our B2B team <span class="arr">→</span></button>
+      <button class="btn" type="submit">Contact our B2B team <span class="arr">→</span></button>
     </div>
     <div class="form__ok" id="formOk" hidden tabindex="-1">
       <h3>Thank you.</h3>
       <p id="okText"></p>
     </div>
   </form>
-</section>
-
-<!-- 7 · COMMUNITY + INSTAGRAM -->
-<section class="community wrap" id="community" aria-labelledby="community-h">
-  <div class="community__top">
-    <div style="display:grid;gap:14px">
-      <h2 class="h community__h rv" id="community-h">The LIPSS community</h2>
-      <p class="community__sub">More than customers.</p>
-    </div>
-    <div class="body rv">
-      <p>LIPSS has grown into a community of fans, collectors and ambassadors who share their favourite shades, collect limited editions and introduce LIPSS to their friends. That's why we keep creating new flavours, colours and limited editions.</p>
-    </div>
-  </div>
-  <div class="feed">
-    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-main-800.webp" srcset="assets/img/com-main-800.webp 800w, assets/img/com-main-1400.webp 1400w" sizes="50vw" width="800" height="1067" style="object-position:50% 35%" alt="Creator on a sun lounger applying a lime Lipper, with strawberry and mango Lippers beside her" loading="lazy"></a>
-    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-1-800.webp" width="800" height="1067" style="object-position:50% 55%" alt="Creator in a jewelled sheet mask applying a Cherry Lipper" loading="lazy"></a>
-    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-2-800.webp" width="800" height="1016" style="object-position:50% 30%" alt="Creator in white satin pyjamas holding a lilac Lipper" loading="lazy"></a>
-    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-3-800.webp" width="800" height="1000" style="object-position:50% 45%" alt="Smiling model in sunlight holding a Butter Croissant Lipper" loading="lazy"></a>
-    <a href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener" aria-label="LIPSS on Instagram"><img src="assets/img/com-4-800.webp" width="800" height="1067" style="object-position:50% 50%" alt="Creator applying a cream Lipper to glossy lips" loading="lazy"></a>
-  </div>
-  <div class="community__foot">
-    <p class="handle">Follow LIPSS · @lipss.uae</p>
-    <a class="btn" href="https://www.instagram.com/lipss.uae/" target="_blank" rel="noopener">Follow us on Instagram <span class="arr">→</span></a>
-  </div>
 </section>
 
 <!-- 8 · SOMETHING NEW IS COMING + FINAL CTA -->
@@ -590,7 +659,7 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
       </ul></div>
     <div><h4>Legal</h4><ul><li><button class="linkish" type="button" data-dlg="privacy">Privacy Policy</button></li><li><button class="linkish" type="button" data-dlg="terms">Terms &amp; Conditions</button></li></ul></div>
   </div>
-  <div class="foot__base"><span>© <span id="yr">2026</span> LIPSS. All rights reserved.</span><span>Born in Ukraine · Now in the UAE</span></div>
+  <div class="foot__base"><span>© <span id="yr">2026</span> LIPSS. All rights reserved.</span><span>Now in the UAE</span></div>
 </footer>
 
 <dialog id="dlg"><div class="dlg"><h3 id="dlgT">Privacy Policy</h3><p>Placeholder. The full text will be added here before launch.</p><form method="dialog"><button class="btn" type="submit">Close</button></form></div></dialog>
@@ -617,7 +686,7 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
   const spy = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['about','lipper','community','uae','partners'].forEach(id => spy.observe(document.getElementById(id)));
+  ['about','lipper','shop','uae','community','partners'].forEach(id => spy.observe(document.getElementById(id)));
 
   /* reveal: only elements below the first screen start hidden */
   if (!reduce && 'IntersectionObserver' in window) {
@@ -629,53 +698,23 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
     });
   }
 
-  /* UAE chapter: warm the background and move the route as you scroll */
-  const journey = $('#uae');
-  const stops = [[252,248,245],[216,198,182],[225,182,165]];
-  const mix = p => {
-    const s = p * (stops.length - 1), i = Math.min(stops.length - 2, Math.floor(s)), t = s - i;
-    return 'rgb(' + stops[i].map((c, k) => Math.round(c + (stops[i + 1][k] - c) * t)).join(',') + ')';
-  };
   let ticking = false;
-  const frame = () => {
-    ticking = false;
-    nav.classList.toggle('solid', scrollY > 20);
-    const r = journey.getBoundingClientRect(), vh = innerHeight;
-    const p = Math.min(1, Math.max(0, (vh - r.top) / (r.height + vh * .2)));
-    journey.style.setProperty('--p', p.toFixed(3));
-    journey.style.setProperty('--jbg', mix(p));
-  };
+  const frame = () => { ticking = false; nav.classList.toggle('solid', scrollY > 20); };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
   frame();
 
-  /* dunes behind the UAE chapter */
-  const cv = $('#dunes'), ctx = cv.getContext('2d');
-  let W = 0, H = 0, visible = false, t0 = 0;
-  function sizeDunes() {
-    const dpr = Math.min(2, devicePixelRatio || 1);
-    W = cv.clientWidth; H = cv.clientHeight;
-    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    drawDunes(t0);
-  }
-  function drawDunes(t) {
-    ctx.clearRect(0, 0, W, H);
-    const n = 24;
-    for (let i = 0; i < n; i++) {
-      const base = H * (.45 + i / n * .6);
-      ctx.beginPath();
-      for (let x = 0; x <= W; x += 8) {
-        const y = base + Math.sin(x * .0042 + i * .5 + t * .00012) * (18 + i * 1.4) + Math.sin(x * .011 - i + t * .0002) * 6;
-        x ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
-      }
-      ctx.strokeStyle = `rgba(94,42,43,${.035 + i / n * .07})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
+  /* shop: orders go to WhatsApp once a number is set, otherwise to Instagram Direct.
+     WHATSAPP: country code + number, digits only (e.g. '971501234567'). PRICES: AED per product. */
+  const WHATSAPP = '';
+  const PRICES = {};
+  $$('.order').forEach(a => {
+    const name = a.dataset.product, card = a.closest('.card'), price = PRICES[name];
+    if (price) { const el = card.querySelector('[data-price]'); el.textContent = 'AED ' + price; el.classList.remove('tbc'); }
+    if (WHATSAPP) {
+      a.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(`Hi LIPSS! I'd like to order the ${name} Lipper.`);
+      a.textContent = 'Order on WhatsApp';
     }
-  }
-  function loop(t) { if (!visible) return; t0 = t; drawDunes(t); requestAnimationFrame(loop); }
-  new IntersectionObserver(es => { visible = es[0].isIntersecting; if (visible && !reduce) requestAnimationFrame(loop); }).observe(journey);
-  addEventListener('resize', sizeDunes);
-  sizeDunes();
+  });
 
   /* teaser spotlight: follows the mouse, drifts on its own otherwise */
   const teaser = $('#teaser'), lit = $('#lit');
