@@ -303,7 +303,7 @@ a{color:inherit}
 
 /* ---------- FOOTER ---------- */
 .foot{background:var(--cocoa);color:var(--cream);padding-block:clamp(48px,6vw,80px) max(28px,env(safe-area-inset-bottom,0px));display:grid;gap:40px}
-.foot__logo{color:var(--cream);width:min(320px,70%)}
+.foot__logo{color:var(--cream);width:min(150px,40%)}
 .foot__logo svg{width:100%;height:auto;aspect-ratio:76/36}
 .foot__cols{display:grid;gap:28px}
 .foot h4{font:500 .68rem/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin:0 0 10px}
@@ -509,9 +509,8 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
     </ul>
   </div>
 
-  <form class="form" id="enquiry" name="b2b-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-    <input type="hidden" name="form-name" value="b2b-enquiry">
-    <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+  <form class="form" id="enquiry" novalidate>
+    <p hidden><label>Leave this empty <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
     <div id="formBody" style="display:grid;gap:22px">
       <h3>Contact our B2B team</h3>
       <p class="intro">Whether you're interested in stocking LIPSS, creating something together or simply want to know more, get in touch.</p>
@@ -702,8 +701,9 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
     new IntersectionObserver(es => { tv = es[0].isIntersecting; if (tv) requestAnimationFrame(drift); }).observe(teaser);
   }
 
-  /* enquiry form (front end only: set ENDPOINT to your inbox or CRM) */
-  const ENDPOINT = '/';
+  /* enquiry form: GitHub Pages can't receive forms, so paste a Formspree endpoint
+     (e.g. 'https://formspree.io/f/abcdwxyz') here to have enquiries emailed to you */
+  const ENDPOINT = '';
   const form = $('#enquiry');
   const need = { 'f-name': v => v.trim() ? '' : 'Please add your name.',
                  'f-email': v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please add a valid email, like name@company.ae.',
@@ -719,11 +719,11 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
     if (first) { first.focus(); return; }
     const data = Object.fromEntries(new FormData(form));
     let sent = false;
-    if (ENDPOINT) { try { const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() }); sent = res.ok; } catch (_) {} }
+    if (ENDPOINT) { try { const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) }); sent = res.ok; } catch (_) {} }
     $('#formBody').hidden = true;
     $('#okText').textContent = sent
       ? `Thanks, ${data.name}. Our team will reply to ${data.email}.`
-      : `Sorry, ${data.name}, your enquiry didn't go through. Please email us at ${$('#email').textContent} instead.`;
+      : `Thanks, ${data.name}. Please send your enquiry to ${$('#email').textContent} and our B2B team will get back to you.`;
     $('#formOk').hidden = false; $('#formOk').focus();
   });
 
