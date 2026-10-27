@@ -228,19 +228,25 @@ a{color:inherit}
 .shop__h{font-size:var(--step-3)}
 .shop__top .lede{font-size:var(--step-1);line-height:1.4;max-width:30em}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
-.card{display:grid;gap:10px;align-content:start}
-.card .frame{aspect-ratio:4/5;background:var(--blush)}
+.card{display:flex;flex-direction:column;gap:10px}
+.card .spec{flex:1;align-content:start}
+.card .frame{aspect-ratio:3/4;background:#fff}
 .card .frame img{transition:transform 1s var(--ease)}
 .card:hover .frame img{transform:scale(1.05)}
 .card h3{margin:0;font-weight:800;font-size:clamp(.95rem,.85rem + .5vw,1.2rem);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
-.card p{margin:0;font-size:.85rem;color:var(--cocoa-60);line-height:1.4}
+.spec{margin:0;display:grid;gap:2px;font-size:.8rem;line-height:1.35}
+.spec div{display:flex;gap:.5em}
+.spec dt{font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.68rem;padding-top:.15em;flex:none}
+.spec dd{margin:0;color:var(--cocoa-60)}
 .price{font-weight:600;font-size:1rem}
 .price.tbc{color:var(--cocoa-60);font-weight:500;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
 .card .btn{min-height:44px;padding:.75em 1em;font-size:.68rem;letter-spacing:.12em;width:100%}
 .shop__foot{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;border-top:1px solid var(--cocoa-15);padding-top:22px}
 .shop__foot p{margin:0;font-size:.95rem}
 .shop__foot a{font-weight:600}
-@media (min-width:900px){.cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 20px}.shop__top{grid-template-columns:1fr 1fr;align-items:end;column-gap:6vw}}
+@media (min-width:900px){.cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 20px}}
+@media (min-width:1200px){.cards{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media (min-width:900px){.shop__top{grid-template-columns:1fr 1fr;align-items:end;column-gap:6vw}}
 
 /* ---------- 6 PARTNERS (+ why) ---------- */
 .partners{padding-block:var(--space);display:grid;gap:48px}
@@ -467,60 +473,109 @@ dialog::backdrop{background:rgba(43,18,19,.6);backdrop-filter:blur(4px)}
   </div>
   <div class="cards">
     <article class="card rv">
-      <div class="frame"><img src="assets/img/cherry-eye-720.webp" width="720" height="1080" style="object-position:50% 40%" alt="Model holding a red Cherry Lipper and a pair of cherries over one eye" loading="lazy"></div>
-      <h3>Cherry</h3>
-      <p>Juicy cherry shine with a sweet berry scent.</p>
-      <span class="price tbc" data-price>Price soon</span>
-      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Cherry">Order now</a>
-    </article>
-    <article class="card rv">
-      <div class="frame"><img src="assets/img/croissant-720.webp" width="720" height="900" style="object-position:50% 50%" alt="Butter Croissant Lipper resting on croissants in a lace-lined bowl" loading="lazy"></div>
-      <h3>Butter Croissant</h3>
-      <p>Soft cream shine that smells like fresh pastry.</p>
-      <span class="price tbc" data-price>Price soon</span>
-      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Butter Croissant">Order now</a>
-    </article>
-    <article class="card rv">
-      <div class="frame"><img src="assets/img/dubai-chocolate-429.webp" width="429" height="536" style="object-position:50% 50%" alt="Dubai Chocolate Lipper held up to glossy lips" loading="lazy"></div>
-      <h3>Dubai Chocolate</h3>
-      <p>Rich chocolate tint with a pistachio twist.</p>
-      <span class="price tbc" data-price>Price soon</span>
-      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Dubai Chocolate">Order now</a>
-    </article>
-    <article class="card rv">
-      <div class="frame"><img src="assets/img/lipper-money-720.webp" width="720" height="900" style="object-position:50% 50%" alt="Dark green Smells Like Money Lipper standing in front of dollar bills" loading="lazy"></div>
-      <h3>Smells Like Money</h3>
-      <p>A clear, high-shine gloss for every day.</p>
-      <span class="price tbc" data-price>Price soon</span>
-      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Smells Like Money">Order now</a>
-    </article>
-    <article class="card rv">
-      <div class="frame"><img src="assets/img/det-scent-900.webp" width="900" height="1350" style="object-position:50% 55%" alt="Two Salted Caramel Lippers among caramel cubes" loading="lazy"></div>
-      <h3>Salted Caramel</h3>
-      <p>Warm caramel scent with a creamy nude shine.</p>
-      <span class="price tbc" data-price>Price soon</span>
-      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Salted Caramel">Order now</a>
-    </article>
-    <article class="card rv">
-      <div class="frame"><img src="assets/img/det-colour-900.webp" width="900" height="1353" style="object-position:50% 30%" alt="Model holding a Pomegranate Lipper over one eye" loading="lazy"></div>
-      <h3>Pomegranate</h3>
-      <p>Deep red colour with a glassy finish.</p>
-      <span class="price tbc" data-price>Price soon</span>
-      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Pomegranate">Order now</a>
-    </article>
-    <article class="card rv">
-      <div class="frame"><img src="assets/img/leopard-gloss-720.webp" width="720" height="900" style="object-position:50% 50%" alt="Two leopard-print Alter Ego Lippers in a pool of red gloss" loading="lazy"></div>
+      <div class="frame"><img src="assets/img/cat-alter-ego-480.webp" srcset="assets/img/cat-alter-ego-480.webp 480w, assets/img/cat-alter-ego-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Alter Ego Lipper tube beside a swatch of the gloss" loading="lazy"></div>
       <h3>Alter Ego</h3>
-      <p>Red shimmer in our leopard-print tube.</p>
+      <dl class="spec"><div><dt>Colour</dt><dd>Red with gold glitter</dd></div><div><dt>Flavour</dt><dd>Cherry brownie</dd></div></dl>
       <span class="price tbc" data-price>Price soon</span>
       <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Alter Ego">Order now</a>
     </article>
     <article class="card rv">
-      <div class="frame"><img src="assets/img/three-tubes-800.webp" width="800" height="450" style="object-position:70% 50%" alt="Model holding mango, strawberry and lime Lippers" loading="lazy"></div>
-      <h3>Tropical trio</h3>
-      <p>Mango, strawberry and lime, in a set of three.</p>
+      <div class="frame"><img src="assets/img/cat-butter-croissant-480.webp" srcset="assets/img/cat-butter-croissant-480.webp 480w, assets/img/cat-butter-croissant-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Butter Croissant Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Butter Croissant</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Pale pink</dd></div><div><dt>Flavour</dt><dd>Butter croissant</dd></div></dl>
       <span class="price tbc" data-price>Price soon</span>
-      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Tropical trio">Order now</a>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Butter Croissant">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-dubai-chocolate-480.webp" srcset="assets/img/cat-dubai-chocolate-480.webp 480w, assets/img/cat-dubai-chocolate-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Dubai Chocolate Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Dubai Chocolate</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Chocolate</dd></div><div><dt>Flavour</dt><dd>Dubai chocolate</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Dubai Chocolate">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-cherry-480.webp" srcset="assets/img/cat-cherry-480.webp 480w, assets/img/cat-cherry-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Cherry Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Cherry</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Red</dd></div><div><dt>Flavour</dt><dd>Cherry</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Cherry">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-coffee-480.webp" srcset="assets/img/cat-coffee-480.webp 480w, assets/img/cat-coffee-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Coffee Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Coffee</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Brown</dd></div><div><dt>Flavour</dt><dd>Coffee</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Coffee">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-fig-480.webp" srcset="assets/img/cat-fig-480.webp 480w, assets/img/cat-fig-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Fig Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Fig</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Pink</dd></div><div><dt>Flavour</dt><dd>Fig</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Fig">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-clear-480.webp" srcset="assets/img/cat-clear-480.webp 480w, assets/img/cat-clear-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Clear Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Clear</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Transparent</dd></div><div><dt>Flavour</dt><dd>Unflavoured</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Clear">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-keep-calm-480.webp" srcset="assets/img/cat-keep-calm-480.webp 480w, assets/img/cat-keep-calm-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Keep Calm Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Keep Calm</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Lavender with silver glitter</dd></div><div><dt>Flavour</dt><dd>Lavender and honey</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Keep Calm">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-pomegranate-480.webp" srcset="assets/img/cat-pomegranate-480.webp 480w, assets/img/cat-pomegranate-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Pomegranate Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Pomegranate</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Dark red</dd></div><div><dt>Flavour</dt><dd>Pomegranate</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Pomegranate">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-popcorn-480.webp" srcset="assets/img/cat-popcorn-480.webp 480w, assets/img/cat-popcorn-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Popcorn Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Popcorn</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Pink with glitter</dd></div><div><dt>Flavour</dt><dd>Sweet popcorn</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Popcorn">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-salted-caramel-480.webp" srcset="assets/img/cat-salted-caramel-480.webp 480w, assets/img/cat-salted-caramel-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Salted Caramel Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Salted Caramel</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Transparent</dd></div><div><dt>Flavour</dt><dd>Salted caramel</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Salted Caramel">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-smells-like-money-480.webp" srcset="assets/img/cat-smells-like-money-480.webp 480w, assets/img/cat-smells-like-money-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Smells Like Money Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Smells Like Money</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Chocolate with gold glitter</dd></div><div><dt>Flavour</dt><dd>Coffee with cinnamon</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Smells Like Money">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-lime-480.webp" srcset="assets/img/cat-lime-480.webp 480w, assets/img/cat-lime-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Lime Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Lime</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Lime</dd></div><div><dt>Flavour</dt><dd>Lime</dd></div><div><dt>SPF</dt><dd>20 UVA</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Lime">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-strawberry-480.webp" srcset="assets/img/cat-strawberry-480.webp 480w, assets/img/cat-strawberry-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Strawberry Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Strawberry</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Strawberry</dd></div><div><dt>Flavour</dt><dd>Strawberry</dd></div><div><dt>SPF</dt><dd>20 UVA</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Strawberry">Order now</a>
+    </article>
+    <article class="card rv">
+      <div class="frame"><img src="assets/img/cat-banana-480.webp" srcset="assets/img/cat-banana-480.webp 480w, assets/img/cat-banana-960.webp 960w" sizes="(min-width:1200px) 18vw, (min-width:900px) 30vw, 46vw" width="480" height="640" alt="Banana Lipper tube beside a swatch of the gloss" loading="lazy"></div>
+      <h3>Banana</h3>
+      <dl class="spec"><div><dt>Colour</dt><dd>Banana</dd></div><div><dt>Flavour</dt><dd>Banana</dd></div><div><dt>SPF</dt><dd>20 UVA</dd></div></dl>
+      <span class="price tbc" data-price>Price soon</span>
+      <a class="btn order" href="https://ig.me/m/lipss.uae" target="_blank" rel="noopener" data-product="Banana">Order now</a>
     </article>
   </div>
   <div class="shop__foot">
